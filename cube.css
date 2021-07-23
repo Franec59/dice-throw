@@ -1,0 +1,96 @@
+/*le cube*/
+/*==================================*/
+
+.cube-container-one{
+    width: 8rem;
+    height: 8rem;
+    perspective: 1000px;
+    margin: 4rem auto;
+}
+
+.cube-one{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /*animation : spin 2s 1 ease-out;*/
+    animation : spin 8s infinite linear;
+}
+
+.face-one{
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+.top-one{
+    background-color: white;
+    transform: rotateX(90deg) translateZ(4rem);
+    background-image: url(./images/DDMovie.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    
+}
+.bottom-one{
+    background-color: green;
+    transform: rotateX(-90deg) translateZ(4rem);
+    background-image: url(./images/logo-plateau.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.right-one{
+    background-color: rgb(31, 27, 27);
+    transform: rotateY(90deg) translateZ(4rem);
+    background-image: url(./images/logo-chaos.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.left-one{
+    background-color: white;
+    transform: rotateY(-90deg) translateZ(4rem);
+    background-image: url(./images/Warhammer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+.front-one{
+    background-color: wheat;
+    transform: rotateX(0deg) translateZ(4rem);
+    background-image: url(./images/Caliban.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+/*face qui n'apparait jamais ...*/
+.back-one{
+    background-color: white;
+    transform: rotateX(-180deg) translateZ(4rem);
+    background-image: url(./images/Logo-garde.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+@keyframes spin {
+    from {transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/*========================================================*/

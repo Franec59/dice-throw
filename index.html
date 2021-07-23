@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silulateur de lancer de dé</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./range.css">
+    <link rel="stylesheet" href="./cube.css">
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="#home">Caliban-Grim</a>
+        <a href="#contact">Warhammer</a>
+        <a href="#about">Cyberpunk</a>
+    </div>
+
+    <div id="container">
+        <div class="introduction">
+            <h1>Simulateur de lancé de Dé</h1>
+            <h3>pour jeux de rôles, jeux de figurine et de plateaux</h3>
+            
+            <div class="cube-container-one">
+                <div class="cube-one">
+                    <div class="face-one front-one"></div>
+                    <div class="face-one back-one"></div>
+                    <div class="face-one right-one"></div>
+                    <div class="face-one left-one"></div>
+                    <div class="face-one top-one"></div>
+                    <div class="face-one bottom-one"></div>
+                </div>
+            </div><!--fin de cube-container-->
+            <p>Pour utiliser ce simulateur, vous devez sélectionner le nombre de face ( de 2 à 100 ) ainsi que le nombre de dés souhaité puis cliquer sur lancer !</p>
+        </div><!--fin d'introduction-->
+
+        
+        <div class="range-container">
+            <div class="range-label">
+                <label for="cursor-face">Nombre de face</label>
+                <input type="range" id="cursor-face" min="2" max="100" value="6" oninput="document.getElementById('display-cursor-face').value=this.value">
+                <input type="text" id="display-cursor-face" value="6" readonly>
+            </div>
+            <div class="range-label" id="range-label2">
+                <label for="cursor-des">Nombre de Dé</label>
+                <input type="range" id="cursor-des" min="1" max="100" value="1" oninput="document.getElementById('display-cursor-des').value=this.value">
+                <input type="text" id="display-cursor-des" value="1" readonly>
+            </div>
+        </div><!--fin de range-container-->
+        <div class="range-container">
+            <button id="lancer-btn">Lancer les Dés</button> 
+        </div>
+          
+        <div id="tapis"></div>
+
+    </div> <!--fin de container -->
+
+
+
+    <script src="./sim.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(./images/background-large-grim.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color:wheat
+}
+
+h3{
+    color:rgb(235, 139, 75);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.introduction{
+    text-align: center;
+}
+
+.introduction p {
+    margin-top: 1.5rem;
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    
+}
+
+#display-cursor-face{
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color:wheat;
+}
+#display-cursor-des{
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: wheat
+}
+
+.range-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+.range-label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: wheat;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#range-label2{
+    margin-left: 3rem;
+}
+
+#cursor-face, #cursor-des{
+    width: 12rem;
+}
+
+/*le cube*/
+/*==================================*/
+
+/*espace d'évolution d'un cube */
+.cube-container{
+    width: 3rem;
+    height: 3rem;
+    perspective: 1000px;
+    margin: 0.5rem;
+}
+
+.cube{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation : spin 2s 1 ease-out;
+    
+}
+
+.face{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-size: 1.8rem;
+}
+
+.top{
+    background-color: wheat;
+    transform: rotateX(90deg) translateZ(1.5rem);
+    
+}
+.bottom{
+    background-color: wheat;
+    transform: rotateX(-90deg) translateZ(1.5rem);
+}
+.right{
+    background-color: wheat;
+    transform: rotateY(90deg) translateZ(1.5rem);
+}
+.left{
+    background-color: wheat;
+    transform: rotateY(-90deg) translateZ(1.5rem);
+}
+.front{
+    background-color: wheat;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+.back{
+    background-color: wheat;
+    transform: rotateX(-180deg) translateZ(1.5rem);
+}
+
+@keyframes spin {
+    from {transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/*========================================================*/
+
+.tapis{
+    display: flex;
+    min-height: 10rem;
+    height: auto;
+    width: 95%;
+    border: double 5px wheat;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: #04AA6D;
+    background: linear-gradient(#04AA6D 0%, #04744b 100%);
+}
+
+#lancer-btn{
+    background: linear-gradient( rgb(63, 56, 43) 0%, rgb(235, 202, 141) 100%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+    color: wheat;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+#lancer-btn:hover{
+    transform:scale(1.2)
+}
+
+/*Partie responsive =======================================*/
+@media only screen and (max-width: 600px) {
+
+.range-container{
+    flex-direction: column;
+
+}
+
+#lancer-btn{
+    margin-left: 7rem;
+    margin-right: 7rem;
+}
+
+#range-label2{
+    margin-left: 0rem;
+    margin-top: 1.5rem;
+}
+
+.tapis{
+    width: 80%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+}
