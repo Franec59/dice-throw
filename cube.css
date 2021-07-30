@@ -48,9 +48,10 @@
     background-position-y: center;
 }
 .right-one{
-    background-color: rgb(31, 27, 27);
+    /* background-color: rgb(31, 27, 27); */
+    background-color: rgb(246,246,246);
     transform: rotateY(90deg) translateZ(4rem);
-    background-image: url(./images/logo-chaos.png);
+    background-image: url(./images/cyberpunk.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;

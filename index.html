@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="./navbar.css">
     <link rel="stylesheet" href="./range.css">
     <link rel="stylesheet" href="./cube.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-    <div class="topnav">
-        <a class="active" href="#home">Caliban-Grim</a>
-        <a href="#contact">Warhammer</a>
-        <a href="#about">Cyberpunk</a>
-    </div>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Caliban-Grim</a>
+        <a href="#news" class="navlink">Warhammer</a>
+        <a href="#contact" class="navlink">Règles Alternatives</a>
+        <a href="#about" class="navlink">Cyberpunk</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
 
     <div id="container">
         <div class="introduction">
@@ -54,9 +59,12 @@
         <div class="range-container">
             <button id="lancer-btn">Lancer les Dés</button> 
         </div>
-          
+        
+        
         <div id="tapis"></div>
-
+        <h2 id="aff-result">Synthèse des résultats par face</h2>
+        <div id="result"></div>
+         
     </div> <!--fin de container -->
 
 
