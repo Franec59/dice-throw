@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Lancer de dés pour déterminer les caractéristiques des personnages dans l'Age Noir">
+
+    <title>Page Age Noir</title>
+    <link rel="stylesheet" href="./agenoir.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./range.css">
+    <link rel="stylesheet" href="./cube.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Caliban-Grim</a>
+        <a href="agenoir.html" class="navlink">L'Age Noir</a>
+        <a href="#contact" class="navlink">Règles Alternatives</a>
+        <a href="#about" class="navlink">Cyberpunk</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+    <div id="container">
+        <div class="introduction">
+            <h1>Les Chroniques de l'Age Noir</h1>
+            <h2>Lancer de dés afin de déterminer les 10 caractéristiques du personnage</h2>
+            <h3>Niveau compris entre 4 min et 10 max</h3>
+            
+            <h3>Le simulateur vous lance 10 dés à 1D7 +3</h3>
+        </div><!--fin d'introduction-->
+
+        <div class="range-container">
+            <button id="lancer-btn">Lancer les Dés</button> 
+        </div>
+        
+        
+        <div id="tapis"></div>
+        <h2 id="aff-result">Synthèse des résultats par face</h2>
+        <div id="result"></div>
+         
+    </div> <!--fin de container -->
+
+
+
+    <script src="./agenoir.js"></script>
+</body>
+</html>

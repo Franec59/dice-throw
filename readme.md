@@ -17,4 +17,7 @@ Les options ne sont pas encore développés.
 2. Lancer le fichier index.html
 
 
+## Ajout
 
+Ajout de la page Age noir
+Lancer de dés afin de déterminer les caractéristiques des personnage de l'Age Noir ( 1D7 + 3 )
