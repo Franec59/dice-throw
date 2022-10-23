@@ -1,0 +1,304 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(../images/creaperso2.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+h1{
+    color:wheat;
+    text-decoration: underline;
+    text-shadow: 2px 2px 4px black;
+
+}
+
+h2{
+    color:whitesmoke;
+    text-shadow: 2px 2px 4px black;
+
+}
+
+#titre2{
+    text-shadow: 2px 2px 2px black;
+    font-style: italic;
+    color:chartreuse;
+    
+}
+
+h3{
+    color:rgb(246, 237, 237);
+    text-shadow: 4px 4px 6px black;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.introduction{
+    text-align: center;
+}
+
+.introduction p {
+    margin-top: 1.5rem;
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    
+}
+
+#display-cursor-face{
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color:wheat;
+}
+#display-cursor-des{
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: wheat
+}
+
+.range-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+.range-label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: wheat;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#range-label2{
+    margin-left: 3rem;
+}
+
+#cursor-face, #cursor-des{
+    width: 20rem;
+}
+
+/*le cube*/
+/*==================================*/
+
+/*espace d'évolution d'un cube */
+.cube-container{
+    width: 3rem;
+    height: 3rem;
+    perspective: 1000px;
+    margin: 0.5rem;
+}
+
+.cube{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation : spin 2s 1 ease-out;
+    
+}
+
+.face{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-size: 1.8rem;
+}
+
+.top{
+    background-color: wheat;
+    transform: rotateX(90deg) translateZ(1.5rem);
+    
+}
+.bottom{
+    background-color: wheat;
+    transform: rotateX(-90deg) translateZ(1.5rem);
+}
+.right{
+    background-color: wheat;
+    transform: rotateY(90deg) translateZ(1.5rem);
+}
+.left{
+    background-color: wheat;
+    transform: rotateY(-90deg) translateZ(1.5rem);
+}
+
+.front1{
+    background-color: wheat;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+
+.front2{
+    background-color: limegreen;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+
+.front3{
+    background-color: blue;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+
+.front4{
+    background-color:crimson;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+.back{
+    background-color: wheat;
+    transform: rotateX(-180deg) translateZ(1.5rem);
+}
+
+@keyframes spin {
+    from {transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/*========================================================*/
+
+.tapis{
+    display: flex;
+    min-height: 6rem;
+    height: auto;
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+#lancer-btn{
+    background: linear-gradient( rgb(63, 56, 43) 0%, rgb(235, 202, 141) 100%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+    color: wheat;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-top: 3rem;
+}
+
+#lancer-btn:hover{
+    transform:scale(1.2)
+}
+
+.result{
+    display: flex;
+    min-height: 6rem;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    
+}
+
+.show{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    opacity: 0;
+    animation : display 4s 1s ease-out forwards;
+
+}
+
+.faceresult{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-size: 1.8rem;
+    background: wheat;
+
+}
+
+.xtimes{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    /* color:rgb(235, 139, 75); */
+    color:white;
+}
+
+#aff-result{
+    color:rgb(235, 139, 75);
+    text-align: center;
+    text-decoration: underline;
+    opacity: 0;
+
+}
+
+@keyframes display {
+    from {opacity: 0;
+    }
+    to {opacity: 1;
+    }
+}
+
+/*Partie responsive =======================================*/
+@media screen and (max-width: 600px) {
+
+.range-container{
+    flex-direction: column;
+
+}
+
+#lancer-btn{
+    margin-left: 7rem;
+    margin-right: 7rem;
+}
+
+#range-label2{
+    margin-left: 0rem;
+    margin-top: 1.5rem;
+}
+
+.tapis{
+    width: 80%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#cursor-face, #cursor-des {
+    width: 20rem;
+    
+  }
+}
+
+@media screen and (min-width: 1024px) {
+    .tapis{
+        width: 95%;
+    }
+
+}

@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="Lancer de dés pour déterminer les caractéristiques des personnages dans l'Age Noir">
+    <meta name="description" content="Aide à la création de la fiche de jeu de l'Age Noir">
 
-    <title>Page Age Noir</title>
-    <link rel="stylesheet" href="./agenoir.css">
+    <title>Fiche de jeu</title>
+    <link rel="stylesheet" href="./styles/fiche_AN.css">
     <link rel="stylesheet" href="./navbar.css">
     <link rel="stylesheet" href="./range.css">
-    <link rel="stylesheet" href="./cube.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -29,25 +28,23 @@
     <div id="container">
         <div class="introduction">
             <h1>Les Chroniques de l'Age Noir</h1>
-            <h2>Lancer de dés afin de déterminer les 10 caractéristiques du personnage</h2>
-            <h3>Niveau compris entre 4 min et 10 max</h3>
+            <h2>Aide de jeu pour la création de la fiche d'un personnage</h2>
+            <h2 id="titre2">Choix des caractéristiques</h2>
             
-            <h3>Le simulateur vous lance 10 dés à 1D7 +3</h3>
         </div><!--fin d'introduction-->
 
         <div class="range-container">
             <button id="lancer-btn">Lancer les Dés</button> 
         </div>
         
-        
         <div id="tapis"></div>
-        <h2 id="aff-result">Synthèse des résultats par face</h2>
-        <div id="result"></div>
+        <!-- <h2 id="aff-result">Synthèse des résultats par face</h2>
+        <div id="result"></div> -->
          
     </div> <!--fin de container -->
 
 
 
-    <script src="./agenoir.js"></script>
+    <script src="./scripts/fiche_AN.js"></script>
 </body>
 </html>

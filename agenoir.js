@@ -95,7 +95,7 @@ function score () {
     const resultFront = document.querySelectorAll(".front");
     resultFront.forEach((desfront) => {
         desfront.textContent = Math.floor((Math.random() * (numberOfFace) +1)+3);
-        //console.log(desfront.textContent);
+        console.log(desfront.textContent);
         arrayResult.push(desfront.textContent);
         
     });
@@ -180,4 +180,5 @@ lancerBtn.addEventListener("click", () => {
     diceSound();
     resultId.classList.add("result");
     showResult();
+    console.log(arrayResult)
 });
