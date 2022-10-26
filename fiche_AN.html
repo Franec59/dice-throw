@@ -28,8 +28,8 @@
     <div id="container">
         <div class="introduction">
             <h1>Les Chroniques de l'Age Noir</h1>
-            <h2>Aide de jeu pour la création de la fiche d'un personnage</h2>
-            <h2 id="titre2">Choix des caractéristiques</h2>
+            <h2>Aide de jeu pour la création d'un personnage</h2>
+            <h3 class="titre2">Déterminez les valeurs des 10 caractéristiques</h3>
             
         </div><!--fin d'introduction-->
 
@@ -38,11 +38,86 @@
         </div>
         
         <div id="tapis"></div>
-        <!-- <h2 id="aff-result">Synthèse des résultats par face</h2>
-        <div id="result"></div> -->
-         
+        
+        <div class="introduction">
+            <h2>Répartition dans chaque caractéristique pour l'Humain</h2>
+            <h3 class="titre2">Répartissez vous même vos résultats ou choississez le mode automatique</h3>
+        </div>
+        
+        <div class="caract">
+            <div class="form">
+                <h2>Humain</h2>
+                <h3 class="repartition">Répartition manuelle</h3>
+                <div class="karac_form">
+                    <span class="saisi_manu">
+                        <label for="ref-hum">REF = </label>
+                        <input type="number" id="ref-hum" name="ref-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="per-hum">PER = </label>
+                        <input type="number" id="per-hum" name="per-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="vol-hum">VOL = </label>
+                        <input type="number" id="vol-hum" name="vol-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="hum-hum">HUM = </label>
+                        <input type="number" id="hum-hum" name="hum-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="int-hum">INT = </label>
+                        <input type="number" id="int-hum" name="int-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="adr-hum">ADR = </label>
+                        <input type="number" id="adr-hum" name="adr-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="agi-hum">AGI = </label>
+                        <input type="number" id="agi-hum" name="agi-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="end-hum">END = </label>
+                        <input type="number" id="end-hum" name="end-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="for-hum">FOR = </label>
+                        <input type="number" id="for-hum" name="for-hum" min="7" max="14">
+                    </span>
+                    <span class="saisi_manu">
+                        <label for="bt-hum">BT = </label>
+                        <input type="number" id="bt-hum" name="bt-hum" min="7" max="14">
+                    </span>
+                </div>
+                <div class="range-container">
+                    <button type="button" id="getKarac">Valider votre saisie</button>
+                </div> 
+            </div>
+            
+            <div class="form">
+                <h2>Humain</h2>
+                <h3 class="repartition">Répartition auto</h3>
+                <div class="range-container">
+                    <button type="button" id="valide-btn2">Répartir les valeurs</button> 
+                </div>
+                
+                <div class="karac_form">
+                    <h3>REF = <span id="ref_hum"></span></h3>
+                    <h3>PER= <span id="per_hum"></span></h3>
+                    <h3>VOL = <span id="vol_hum"></span></h3>
+                    <h3>HUM = <span id="hum_hum"></span></h3>
+                    <h3>INT = <span id="int_hum"></span></h3>
+                    <h3>ADR = <span id="adr_hum"></span></h3>
+                    <h3>AGI = <span id="agi_hum"></span></h3>
+                    <h3>END = <span id="end_hum"></span></h3>
+                    <h3>FOR = <span id="for_hum"></span></h3>
+                    <h3>BT = <span id="bt_hum"></span></h3>
+                </div>   
+            </div>
+        </div><!--fin de caract-->
+        
     </div> <!--fin de container -->
-
 
 
     <script src="./scripts/fiche_AN.js"></script>

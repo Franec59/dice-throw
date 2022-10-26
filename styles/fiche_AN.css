@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: url(../images/creaperso2.jpg);
     background-size: cover;
     background-repeat:no-repeat;
@@ -20,11 +20,10 @@ h2{
 
 }
 
-#titre2{
+.titre2{
     text-shadow: 2px 2px 2px black;
     font-style: italic;
     color:chartreuse;
-    
 }
 
 h3{
@@ -47,8 +46,7 @@ h3{
     margin-left: 4.5rem;
     margin-right: 4.5rem;
     color: whitesmoke;
-    font-size: 1.2rem;
-    
+    font-size: 1.2rem;  
 }
 
 #display-cursor-face{
@@ -59,6 +57,7 @@ h3{
     font-size: 1.5rem;
     color:wheat;
 }
+
 #display-cursor-des{
     width: 2.5rem;
     background: transparent;
@@ -148,17 +147,17 @@ h3{
 }
 
 .front2{
-    background-color: limegreen;
+    background-color: wheat;
     transform: rotateX(0deg) translateZ(1.5rem);
 }
 
 .front3{
-    background-color: blue;
+    background-color: wheat;
     transform: rotateX(0deg) translateZ(1.5rem);
 }
 
 .front4{
-    background-color:crimson;
+    background-color:wheat;
     transform: rotateX(0deg) translateZ(1.5rem);
 }
 .back{
@@ -177,14 +176,12 @@ h3{
 
 .tapis{
     display: flex;
-    min-height: 6rem;
     height: auto;
     width: 90%;
     flex-wrap: wrap;
     justify-content: center;
     margin-left: 1rem;
     margin-right: 1rem;
-    margin-top: 2rem;
     margin-bottom: 3rem;
     padding: 1rem;
 }
@@ -198,14 +195,14 @@ h3{
     color: wheat;
     font-weight: bold;
     transition: 0.5s;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 #lancer-btn:hover{
     transform:scale(1.2)
 }
 
-.result{
+/* .result{
     display: flex;
     min-height: 6rem;
     height: auto;
@@ -216,18 +213,18 @@ h3{
     margin-top: 1rem;
     margin-bottom: 3rem;
     
-}
+} */
 
-.show{
+/* .show{
     display: flex;
     flex-direction: column;
     padding: 1rem;
     opacity: 0;
     animation : display 4s 1s ease-out forwards;
 
-}
+} */
 
-.faceresult{
+/* .faceresult{
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -238,9 +235,9 @@ h3{
     font-size: 1.8rem;
     background: wheat;
 
-}
+} */
 
-.xtimes{
+/* .xtimes{
     width: 3rem;
     height: 3rem;
     display: flex;
@@ -248,36 +245,137 @@ h3{
     justify-content: center;
     font-size: 1.8rem;
     /* color:rgb(235, 139, 75); */
-    color:white;
-}
+    /* color:white; */
+ */
 
-#aff-result{
+/* #aff-result{
     color:rgb(235, 139, 75);
     text-align: center;
     text-decoration: underline;
     opacity: 0;
 
-}
+} */
 
-@keyframes display {
+/* @keyframes display {
     from {opacity: 0;
     }
     to {opacity: 1;
     }
+} */
+
+/*=======================================================================*/
+/*partie validation des caractéristiques */
+
+#valide-btn{
+    background: linear-gradient( rgb(63, 56, 43) 0%, rgb(235, 202, 141) 100%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+    color: wheat;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-top: -1.5rem;
 }
+#valide-btn2{
+    background: linear-gradient( rgb(63, 56, 43) 0%, rgb(235, 202, 141) 100%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+    color: wheat;
+    font-weight: bold;
+    transition: 0.5s;
+    margin-top: -1.5rem;
+}
+
+/* #valide-btn:hover{
+    transform:scale(1.1)
+} */
+#valide-btn2:hover{
+    transform:scale(1.1)
+}
+
+#valide-test{
+    cursor: pointer;
+}
+
+.caract{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: repeating-linear-gradient(0deg, hsla(202,0%,65%,0.08) 0px, hsla(202,0%,65%,0.08) 
+    1px,transparent 1px, transparent 11px),repeating-linear-gradient(90deg, hsla(202,0%,65%,0.08) 0px, hsla(202,0%,65%,0.08) 1px,
+    transparent 1px, transparent 11px),linear-gradient(90deg, rgb(20,20,20),rgb(20,20,20));
+    border: 3px wheat groove;
+    min-width: 12rem;
+    margin: 1rem;
+    padding: 5px;
+}
+
+label{
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+.repartition{
+    margin-top: -1.5rem;
+    font-style: italic;
+    text-shadow: 2px 2px 2px black;
+    color:chartreuse;
+
+}
+
+.karac_form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.saisi_manu{
+    margin-top: 1rem;
+}
+
+label, input{
+    font-size: 1.3rem;
+}
+
+#getKarac{
+    background: linear-gradient( rgb(63, 56, 43) 0%, rgb(235, 202, 141) 100%);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+    color: wheat;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+#getKarac:hover{
+    transform:scale(1.1)
+}
+
+
 
 /*Partie responsive =======================================*/
 @media screen and (max-width: 600px) {
 
-.range-container{
+/* .range-container{
     flex-direction: column;
 
-}
+} */
 
-#lancer-btn{
+/* #lancer-btn{
     margin-left: 7rem;
     margin-right: 7rem;
-}
+} */
 
 #range-label2{
     margin-left: 0rem;

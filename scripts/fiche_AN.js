@@ -6,11 +6,17 @@ const numberOfFace = 20
 const tapis = document.getElementById("tapis");
     //console.log(tapis);
 
+// selection des boutons ====================================
 const lancerBtn = document.getElementById("lancer-btn");
-    //console.log(lancerBtn);
+const valideBtn = document.getElementById("valide-btn2");
+const getKarac = document.getElementById("getKarac");
+
+
 
 // tableau des caractéristiques. 
 var karac = [];
+var karacSelected = [];
+var karacForm = [];
 
 //partie responsive navbar -------------------------------------
 function myFunction() {
@@ -322,7 +328,7 @@ const diceSound = () => {
     audio.play();
 };
 
-//fonction qui lance les autres fonctions quand on click sur le bouton
+//fonction qui lance les autres fonctions quand on click sur le bouton "lancer les dés"
 lancerBtn.addEventListener("click", () => {
 
     tapis.innerHTML = "";
@@ -350,3 +356,89 @@ lancerBtn.addEventListener("click", () => {
     diceSound();
     console.log(karac)
 });
+
+
+//partie validation du jet de dés
+//======================================================================
+
+// classement aléatoire des valeurs dans un tableau
+
+function shuffleArray(inputArray){
+    inputArray.sort(()=> Math.random() - 0.5);
+};
+
+// fonction qui attribue les valeurs du tableau dans les karacs
+function attribution(){
+    const refHum = karacSelected[0];
+    const perHum = karacSelected[1];
+    const volHum = karacSelected[2];
+    const humHum = karacSelected[3];
+    const intHum = karacSelected[4];
+    const adrHum = karacSelected[5];
+    const agiHum = karacSelected[6];
+    const endHum = karacSelected[7];
+    const forHum = karacSelected[8];
+    const btHum = karacSelected[9];
+    console.log(refHum)
+    document.getElementById("ref_hum").innerHTML = refHum
+    document.getElementById("per_hum").innerHTML = perHum
+    document.getElementById("vol_hum").innerHTML = volHum
+    document.getElementById("hum_hum").innerHTML = humHum
+    document.getElementById("int_hum").innerHTML = intHum
+    document.getElementById("adr_hum").innerHTML = adrHum
+    document.getElementById("agi_hum").innerHTML = agiHum
+    document.getElementById("end_hum").innerHTML = endHum
+    document.getElementById("for_hum").innerHTML = forHum
+    document.getElementById("bt_hum").innerHTML = btHum
+};
+
+// bouton de répartition auto du jet de dés => select value in new array
+
+valideBtn.addEventListener("click", () => {  
+    karacSelected = [].concat(karac);
+    // console.log(karacSelected)
+    shuffleArray(karacSelected);
+    // console.log(karacSelected)
+    attribution()
+    karacForm = [].concat(karacSelected);
+    console.log("karacformAuto = ", karacForm)
+})
+
+// fonction pour récupérer les saisies utilisateur ( Get the number of a number field )
+getKarac.addEventListener("click", () => {
+    const getRefHum = document.getElementById("ref-hum").value;
+    karacForm.push(getRefHum);
+    console.log("REF = ", getRefHum);
+    const getPerHum = document.getElementById("per-hum").value;
+    karacForm.push(getPerHum);
+    console.log("PER = ", getPerHum);
+    const getVolHum = document.getElementById("vol-hum").value;
+    karacForm.push(getVolHum);
+    console.log("VOL = ", getVolHum);
+    const getHumHum = document.getElementById("hum-hum").value;
+    karacForm.push(getHumHum);
+    console.log("HUM = ", getHumHum);
+    const getIntHum = document.getElementById("int-hum").value;
+    karacForm.push(getIntHum);
+    console.log("INT = ", getIntHum);
+    const getAdrHum = document.getElementById("adr-hum").value;
+    karacForm.push(getAdrHum);
+    console.log("ADR = ", getAdrHum);
+    const getAgiHum = document.getElementById("agi-hum").value;
+    karacForm.push(getAgiHum);
+    console.log("AGI = ", getAgiHum);
+    const getEndHum = document.getElementById("end-hum").value;
+    karacForm.push(getEndHum);
+    console.log("END = ", getEndHum);
+    const getForHum = document.getElementById("for-hum").value;
+    karacForm.push(getForHum);
+    console.log("FOR = ", getForHum);
+    const getBtHum = document.getElementById("bt-hum").value;
+    karacForm.push(getBtHum);
+    console.log("BT = ", getBtHum);
+    
+    console.log("karacformSaisie = ", karacForm);
+});
+
+
+
