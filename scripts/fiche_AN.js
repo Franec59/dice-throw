@@ -354,7 +354,7 @@ lancerBtn.addEventListener("click", () => {
     score3()
     score4()
     diceSound();
-    console.log(karac)
+    console.log("karac du lancer de D =", karac)
 });
 
 
@@ -379,7 +379,7 @@ function attribution(){
     const endHum = karacSelected[7];
     const forHum = karacSelected[8];
     const btHum = karacSelected[9];
-    console.log(refHum)
+    console.log("ref de l'humain = ", refHum)
     document.getElementById("ref_hum").innerHTML = refHum
     document.getElementById("per_hum").innerHTML = perHum
     document.getElementById("vol_hum").innerHTML = volHum
@@ -392,20 +392,133 @@ function attribution(){
     document.getElementById("bt_hum").innerHTML = btHum
 };
 
+// fonction qui calcul des valeurs de la forme vampire à partir de karacForm
+function calculKaracVp(){
+    let refVp = parseInt(karacForm[0]) +2;
+    let perVp = parseInt(karacForm[1]) +2;
+    let volVp = parseInt(karacForm[2]) +2;
+    let humVp = parseInt(karacForm[3]) -2;
+    let intVp = parseInt(karacForm[4]);
+    let adrVp = parseInt(karacForm[5]);
+    let agiVp = parseInt(karacForm[6]) +2;
+    let endVp = parseInt(karacForm[7]) +4;
+    let forVp = parseInt(karacForm[8]) +2;
+    let btVp = parseInt(karacForm[9]) -2;
+    console.log("ref du vampire = ", refVp);
+
+    document.getElementById("ref_vp").innerHTML = refVp;
+    document.getElementById("per_vp").innerHTML = perVp;
+    document.getElementById("vol_vp").innerHTML = volVp;
+    document.getElementById("hum_vp").innerHTML = humVp;
+    document.getElementById("int_vp").innerHTML = intVp;
+    document.getElementById("adr_vp").innerHTML = adrVp;
+    document.getElementById("agi_vp").innerHTML = agiVp;
+    document.getElementById("end_vp").innerHTML = endVp;
+    document.getElementById("for_vp").innerHTML = forVp;
+    document.getElementById("bt_vp").innerHTML = btVp;
+};
+
+// fonction qui calcul des valeurs de la forme berseker à partir de karacForm
+function calculKaracBer(){
+    let refBer = parseInt(karacForm[0]) +4;
+    let perBer = parseInt(karacForm[1]) -2;
+    let volBer = Math.round(parseInt(karacForm[2]) /2);
+    let humBer = Math.round(parseInt(karacForm[3]) /2);
+    let intBer = Math.round(parseInt(karacForm[4]) /2);
+    let adrBer = parseInt(karacForm[5]) -4;
+    let agiBer = parseInt(karacForm[6]) +2;
+    let endBer = parseInt(karacForm[7]) +4;
+    let forBer = parseInt(karacForm[8]) +2;
+    let btBer = "X";
+    console.log("ref du berseker = ", refBer);
+
+    document.getElementById("ref_ber").innerHTML = refBer;
+    document.getElementById("per_ber").innerHTML = perBer;
+    document.getElementById("vol_ber").innerHTML = volBer;
+    document.getElementById("hum_ber").innerHTML = humBer;
+    document.getElementById("int_ber").innerHTML = intBer;
+    document.getElementById("adr_ber").innerHTML = adrBer;
+    document.getElementById("agi_ber").innerHTML = agiBer;
+    document.getElementById("end_ber").innerHTML = endBer;
+    document.getElementById("for_ber").innerHTML = forBer;
+    document.getElementById("bt_ber").innerHTML = btBer;
+};
+
+// fonction qui calcul des valeurs de la forme Gargouille à partir de karacForm
+function calculKaracGar(){
+    let refGar = parseInt(karacForm[0]) -4;
+    let perGar = parseInt(karacForm[1]) +4;
+    let volGar = parseInt(karacForm[2]) -2;
+    let humGar = Math.round(parseInt(karacForm[3]) /2);
+    let intGar = parseInt(karacForm[4]) -4;
+    let adrGar = parseInt(karacForm[5]) -4;
+    let agiGar = parseInt(karacForm[6]) -4;
+    let endGar = parseInt(karacForm[7]) +4;
+    let forGar = parseInt(karacForm[8]) +4;
+    let btGar = "X";
+    console.log("ref de la gargouille = ", refGar);
+
+    document.getElementById("ref_gar").innerHTML = refGar;
+    document.getElementById("per_gar").innerHTML = perGar;
+    document.getElementById("vol_gar").innerHTML = volGar;
+    document.getElementById("hum_gar").innerHTML = humGar;
+    document.getElementById("int_gar").innerHTML = intGar;
+    document.getElementById("adr_gar").innerHTML = adrGar;
+    document.getElementById("agi_gar").innerHTML = agiGar;
+    document.getElementById("end_gar").innerHTML = endGar;
+    document.getElementById("for_gar").innerHTML = forGar;
+    document.getElementById("bt_gar").innerHTML = btGar;
+};
+
+// fonction qui calcul des valeurs de la forme spectral à partir de karacForm
+function calculKaracSpec(){
+    let refSpec = parseInt(karacForm[0]) -2;
+    let perSpec = parseInt(karacForm[1]) +4;
+    let volSpec = parseInt(karacForm[2]) +2;
+    let humSpec = Math.round(parseInt(karacForm[3]) /2);
+    let intSpec = parseInt(karacForm[4]);
+    let adrSpec = parseInt(karacForm[5]) -4;
+    let agiSpec = Math.round(parseInt(karacForm[6]) /2);
+    let endSpec = parseInt(karacForm[7]);
+    let forSpec = "X";
+    let btSpec = "X";
+    console.log("ref du spectre = ", refSpec);
+
+    document.getElementById("ref_spec").innerHTML = refSpec;
+    document.getElementById("per_spec").innerHTML = perSpec;
+    document.getElementById("vol_spec").innerHTML = volSpec;
+    document.getElementById("hum_spec").innerHTML = humSpec;
+    document.getElementById("int_spec").innerHTML = intSpec;
+    document.getElementById("adr_spec").innerHTML = adrSpec;
+    document.getElementById("agi_spec").innerHTML = agiSpec;
+    document.getElementById("end_spec").innerHTML = endSpec;
+    document.getElementById("for_spec").innerHTML = forSpec;
+    document.getElementById("bt_spec").innerHTML = btSpec;
+};
+
 // bouton de répartition auto du jet de dés => select value in new array
 
-valideBtn.addEventListener("click", () => {  
+valideBtn.addEventListener("click", () => { 
+    if (karac.length === 0){
+        alert("Hé, tu dois lancer les dés avant, gros malin !!!");
+    } else {
     karacSelected = [].concat(karac);
-    // console.log(karacSelected)
     shuffleArray(karacSelected);
-    // console.log(karacSelected)
     attribution()
     karacForm = [].concat(karacSelected);
     console.log("karacformAuto = ", karacForm)
+    calculKaracVp();
+    calculKaracBer();
+    calculKaracGar();
+    calculKaracSpec();
+    }
 })
 
 // fonction pour récupérer les saisies utilisateur ( Get the number of a number field )
 getKarac.addEventListener("click", () => {
+    //réinitialiser le tableau avant
+    karacForm.length = 0;
+
     const getRefHum = document.getElementById("ref-hum").value;
     karacForm.push(getRefHum);
     console.log("REF = ", getRefHum);
@@ -436,8 +549,12 @@ getKarac.addEventListener("click", () => {
     const getBtHum = document.getElementById("bt-hum").value;
     karacForm.push(getBtHum);
     console.log("BT = ", getBtHum);
-    
+
     console.log("karacformSaisie = ", karacForm);
+    calculKaracVp();
+    calculKaracBer();
+    calculKaracGar();
+    calculKaracSpec();
 });
 
 

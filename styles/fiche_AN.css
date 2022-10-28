@@ -202,67 +202,6 @@ h3{
     transform:scale(1.2)
 }
 
-/* .result{
-    display: flex;
-    min-height: 6rem;
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    
-} */
-
-/* .show{
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    opacity: 0;
-    animation : display 4s 1s ease-out forwards;
-
-} */
-
-/* .faceresult{
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    border: solid 1px black;
-    font-size: 1.8rem;
-    background: wheat;
-
-} */
-
-/* .xtimes{
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    /* color:rgb(235, 139, 75); */
-    /* color:white; */
- */
-
-/* #aff-result{
-    color:rgb(235, 139, 75);
-    text-align: center;
-    text-decoration: underline;
-    opacity: 0;
-
-} */
-
-/* @keyframes display {
-    from {opacity: 0;
-    }
-    to {opacity: 1;
-    }
-} */
-
 /*=======================================================================*/
 /*partie validation des caractéristiques */
 
@@ -287,6 +226,7 @@ h3{
     font-weight: bold;
     transition: 0.5s;
     margin-top: -1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* #valide-btn:hover{
@@ -294,10 +234,6 @@ h3{
 } */
 #valide-btn2:hover{
     transform:scale(1.1)
-}
-
-#valide-test{
-    cursor: pointer;
 }
 
 .caract{
@@ -318,6 +254,7 @@ h3{
     min-width: 12rem;
     margin: 1rem;
     padding: 5px;
+    height: 100%;
 }
 
 label{
@@ -362,20 +299,13 @@ label, input{
     transform:scale(1.1)
 }
 
+.spanform{
+    margin-top: -10px;
+}
 
 
 /*Partie responsive =======================================*/
 @media screen and (max-width: 600px) {
-
-/* .range-container{
-    flex-direction: column;
-
-} */
-
-/* #lancer-btn{
-    margin-left: 7rem;
-    margin-right: 7rem;
-} */
 
 #range-label2{
     margin-left: 0rem;
@@ -399,4 +329,27 @@ label, input{
         width: 95%;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+    .caract{
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        }
+    .form{
+        width: 12rem;
+        margin-left: 5rem;
+        /* padding: 5px; */
+            
+        }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .caract{
+        flex-wrap: wrap;
+        
+        }
 }
