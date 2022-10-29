@@ -303,6 +303,13 @@ label, input{
     margin-top: -10px;
 }
 
+.titre_form{
+    font-size: 2rem;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px black;
+    color:wheat;
+}
+
 
 /*Partie responsive =======================================*/
 @media screen and (max-width: 600px) {

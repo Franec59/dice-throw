@@ -496,6 +496,23 @@ function calculKaracSpec(){
     document.getElementById("bt_spec").innerHTML = btSpec;
 };
 
+// fonction qui calcul des valeurs des attributs à partir de karacForm
+function calculAttributs(){
+    let ptsSang = parseInt(karacForm[8]) + parseInt(karacForm[7]) +6;
+    let auraPhy = Math.round(parseInt(karacForm[7]) /2) +4;
+    let auraMagi = Math.round(parseInt(karacForm[4]) /2);
+    let auraSur = Math.round(parseInt(karacForm[2]) /2) +2;
+    let totalAura = parseInt(auraPhy) + parseInt(auraMagi) + parseInt(auraSur);
+
+    console.log("points de sang = ", ptsSang);
+
+    document.getElementById("pts_sang").innerHTML = ptsSang;
+    document.getElementById("aura_phy").innerHTML = auraPhy;
+    document.getElementById("aura_magi").innerHTML = auraMagi;
+    document.getElementById("aura_surna").innerHTML = auraSur;
+    document.getElementById("total_aura").innerHTML = totalAura;
+};
+
 // bouton de répartition auto du jet de dés => select value in new array
 
 valideBtn.addEventListener("click", () => { 
@@ -511,6 +528,7 @@ valideBtn.addEventListener("click", () => {
     calculKaracBer();
     calculKaracGar();
     calculKaracSpec();
+    calculAttributs();
     }
 })
 
@@ -555,6 +573,7 @@ getKarac.addEventListener("click", () => {
     calculKaracBer();
     calculKaracGar();
     calculKaracSpec();
+    calculAttributs();
 });
 
 
