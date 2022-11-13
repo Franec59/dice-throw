@@ -281,41 +281,42 @@ function playCube4 () {
 
 };
 
-// afficher le score sur la face visible pour 2 karac à 10 +1D4
+// afficher le score sur la face visible pour (2 karac à 10 +1D4)
+//Modif 4 karac entre 12 et 15 
 
 function score1 () {
     const resultFront1 = document.querySelectorAll(".front1");
     resultFront1.forEach((desfront) => {
-        desfront.textContent = Math.floor((Math.random() * 4 +1)+10);
+        desfront.textContent = Math.floor((Math.random() * 4 +1)+11);
         karac.push(desfront.textContent);
     });
 }
 
-// afficher le score sur la face visible pour 4 karac à 8 +1D6
+// afficher le score sur la face visible pour 2 karac entre 10 et 13 *modif
 function score2 () {
     const resultFront2 = document.querySelectorAll(".front2");
     resultFront2.forEach((desfront) => {
-        desfront.textContent = Math.floor((Math.random() * 6 +1)+8);
+        desfront.textContent = Math.floor((Math.random() * 4 +1)+9);
         karac.push(desfront.textContent);
         
     });
 }
 
-// afficher le score sur la face visible pour 2 karac à 7 +1D6
+// afficher le score sur la face visible pour 2 karac entre 8 et 12 *modif
 function score3 () {
     const resultFront3 = document.querySelectorAll(".front3");
     resultFront3.forEach((desfront) => {
-        desfront.textContent = Math.floor((Math.random() * 6 +1)+6);
+        desfront.textContent = Math.floor((Math.random() * 5 +1)+7);
         karac.push(desfront.textContent);
         
     });
 }
 
-// afficher le score sur la face visible pour 2 karac à 6 +1D4
+// afficher le score sur la face visible pour 2 Karac entre 7 et 15 *modif
 function score4 () {
     const resultFront4 = document.querySelectorAll(".front4");
     resultFront4.forEach((desfront) => {
-        desfront.textContent = Math.floor((Math.random() * 4 +1)+6);
+        desfront.textContent = Math.floor((Math.random() * 9 +1)+6);
         karac.push(desfront.textContent);
         
     });
@@ -334,17 +335,21 @@ lancerBtn.addEventListener("click", () => {
     tapis.innerHTML = "";
     karac.length = 0;
     tapis.classList.add("tapis");
-    for (let a = 0; a < 2; a++ ){
+    //4 karac entre 12 et 15 
+    for (let a = 0; a < 4; a++ ){
             playCube1()
     };
-    for (let i = 0; i< 4; i++ ){
+    //2 karac entre 10 et 13 
+    for (let i = 0; i< 2; i++ ){
             playCube2()
             
     };
+    //2 karac entre 8 et 12 
     for (let i = 0; i< 2; i++ ){
             playCube3()
             
     };
+    //2 Karac entre 7 et 15
     for (let i = 0; i< 2; i++ ){
             playCube4()
             
@@ -403,8 +408,7 @@ function calculKaracVp(){
     let agiVp = parseInt(karacForm[6]) +2;
     let endVp = parseInt(karacForm[7]) +4;
     let forVp = parseInt(karacForm[8]) +2;
-    let btVp = parseInt(karacForm[9]) -2;
-    console.log("ref du vampire = ", refVp);
+    let btVp = parseInt(karacForm[9]) -4;
 
     document.getElementById("ref_vp").innerHTML = refVp;
     document.getElementById("per_vp").innerHTML = perVp;
@@ -418,19 +422,18 @@ function calculKaracVp(){
     document.getElementById("bt_vp").innerHTML = btVp;
 };
 
-// fonction qui calcul des valeurs de la forme berseker à partir de karacForm
+// fonction qui calcul des valeurs de la forme Lycan à partir de karacForm
 function calculKaracBer(){
-    let refBer = parseInt(karacForm[0]) +4;
-    let perBer = parseInt(karacForm[1]) -2;
+    let refBer = parseInt(karacForm[0]) +6;
+    let perBer = parseInt(karacForm[1]) +4;
     let volBer = Math.round(parseInt(karacForm[2]) /2);
     let humBer = Math.round(parseInt(karacForm[3]) /2);
     let intBer = Math.round(parseInt(karacForm[4]) /2);
-    let adrBer = parseInt(karacForm[5]) -4;
-    let agiBer = parseInt(karacForm[6]) +2;
-    let endBer = parseInt(karacForm[7]) +4;
-    let forBer = parseInt(karacForm[8]) +2;
-    let btBer = "X";
-    console.log("ref du berseker = ", refBer);
+    let adrBer = parseInt(karacForm[5]) -6;
+    let agiBer = parseInt(karacForm[6]) +4;
+    let endBer = parseInt(karacForm[7]) +8;
+    let forBer = parseInt(karacForm[8]) +8;
+    let btBer = Math.round(parseInt(karacForm[9]) /2);
 
     document.getElementById("ref_ber").innerHTML = refBer;
     document.getElementById("per_ber").innerHTML = perBer;
@@ -447,16 +450,15 @@ function calculKaracBer(){
 // fonction qui calcul des valeurs de la forme Gargouille à partir de karacForm
 function calculKaracGar(){
     let refGar = parseInt(karacForm[0]) -4;
-    let perGar = parseInt(karacForm[1]) +4;
-    let volGar = parseInt(karacForm[2]) -2;
+    let perGar = parseInt(karacForm[1]) +8;
+    let volGar = parseInt(karacForm[2]) -6;
     let humGar = Math.round(parseInt(karacForm[3]) /2);
     let intGar = parseInt(karacForm[4]) -4;
-    let adrGar = parseInt(karacForm[5]) -4;
-    let agiGar = parseInt(karacForm[6]) -4;
-    let endGar = parseInt(karacForm[7]) +4;
+    let adrGar = Math.round(parseInt(karacForm[3]) /3);
+    let agiGar = parseInt(karacForm[6]) -6;
+    let endGar = parseInt(karacForm[7]) +6;
     let forGar = parseInt(karacForm[8]) +4;
-    let btGar = "X";
-    console.log("ref de la gargouille = ", refGar);
+    let btGar = Math.round(parseInt(karacForm[9]) /3);
 
     document.getElementById("ref_gar").innerHTML = refGar;
     document.getElementById("per_gar").innerHTML = perGar;
@@ -472,17 +474,16 @@ function calculKaracGar(){
 
 // fonction qui calcul des valeurs de la forme spectral à partir de karacForm
 function calculKaracSpec(){
-    let refSpec = parseInt(karacForm[0]) -2;
-    let perSpec = parseInt(karacForm[1]) +4;
-    let volSpec = parseInt(karacForm[2]) +2;
-    let humSpec = Math.round(parseInt(karacForm[3]) /2);
+    let refSpec = parseInt(karacForm[0]) -4;
+    let perSpec = parseInt(karacForm[1]) +6;
+    let volSpec = parseInt(karacForm[2]) +4;
+    let humSpec = parseInt(karacForm[3]) -4;
     let intSpec = parseInt(karacForm[4]);
-    let adrSpec = parseInt(karacForm[5]) -4;
-    let agiSpec = Math.round(parseInt(karacForm[6]) /2);
+    let adrSpec = parseInt(karacForm[5]) -6;
+    let agiSpec = parseInt(karacForm[6]) +8;
     let endSpec = parseInt(karacForm[7]);
-    let forSpec = "X";
-    let btSpec = "X";
-    console.log("ref du spectre = ", refSpec);
+    let forSpec = 0;
+    let btSpec = Math.round(parseInt(karacForm[9]) /2);
 
     document.getElementById("ref_spec").innerHTML = refSpec;
     document.getElementById("per_spec").innerHTML = perSpec;
@@ -499,12 +500,10 @@ function calculKaracSpec(){
 // fonction qui calcul des valeurs des attributs à partir de karacForm
 function calculAttributs(){
     let ptsSang = parseInt(karacForm[8]) + parseInt(karacForm[7]) +6;
-    let auraPhy = Math.round(parseInt(karacForm[7]) /2) +4;
-    let auraMagi = Math.round(parseInt(karacForm[4]) /2);
-    let auraSur = Math.round(parseInt(karacForm[2]) /2) +2;
+    let auraPhy = Math.floor(parseInt(karacForm[7]) /2) +2;
+    let auraMagi = Math.floor(parseInt(karacForm[4]) /2);
+    let auraSur = Math.floor(parseInt(karacForm[2]) /2) +1;
     let totalAura = parseInt(auraPhy) + parseInt(auraMagi) + parseInt(auraSur);
-
-    console.log("points de sang = ", ptsSang);
 
     document.getElementById("pts_sang").innerHTML = ptsSang;
     document.getElementById("aura_phy").innerHTML = auraPhy;
@@ -512,6 +511,99 @@ function calculAttributs(){
     document.getElementById("aura_surna").innerHTML = auraSur;
     document.getElementById("total_aura").innerHTML = totalAura;
 };
+
+// fonction qui calcul des valeurs de la base en CP pour REF à partir de karacForm
+function calculBaseRef(){
+    let baseRefVp = Math.ceil(parseInt(karacForm[0]) /2) +1;
+    let baseRefHum = Math.floor(parseInt(karacForm[0]) /2);
+    let baseRefLyc = Math.ceil(parseInt(karacForm[0]) /2) +3;
+    let baseRefGar = Math.ceil(parseInt(karacForm[0]) /2) -2;
+    let baseRefSpec = Math.ceil(parseInt(karacForm[0]) /2) -2;
+
+    document.getElementById("base_ref_vp").innerHTML = baseRefVp;
+    document.getElementById("base_ref_hum").innerHTML = baseRefHum;
+    document.getElementById("base_ref_lyc").innerHTML = baseRefLyc;
+    document.getElementById("base_ref_gar").innerHTML = baseRefGar;
+    document.getElementById("base_ref_spec").innerHTML = baseRefSpec;
+};
+
+// fonction qui calcul des valeurs de la base en CP pour AGI à partir de karacForm
+function calculBaseAgi(){
+    let baseAgiVp = Math.ceil(parseInt(karacForm[6]) /2) +1;
+    let baseAgiHum = Math.floor(parseInt(karacForm[6]) /2);
+    
+    document.getElementById("base_agi_vp").innerHTML = baseAgiVp;
+    document.getElementById("base_agi_hum").innerHTML = baseAgiHum;
+};
+
+// fonction qui calcul des valeurs de la base en CP pour VOL à partir de karacForm
+function calculBaseVol(){
+    let baseVolVp = Math.ceil(parseInt(karacForm[2]) /2) +1;
+    let baseVolHum = Math.floor(parseInt(karacForm[2]) /2);
+    let baseVolSpec = Math.ceil(parseInt(karacForm[2]) /2) +2;
+    
+    document.getElementById("base_vol_vp").innerHTML = baseVolVp;
+    document.getElementById("base_vol_hum").innerHTML = baseVolHum;
+    document.getElementById("base_vol_spec").innerHTML = baseVolSpec;
+};
+
+// fonction qui calcul des valeurs de la base en CP pour HUM à partir de karacForm
+function calculBaseHum(){
+    let baseHumVp = Math.ceil(parseInt(karacForm[3]) /2) -1;
+    let baseHumHum = Math.floor(parseInt(karacForm[3]) /2);
+    let baseHumSpec = Math.ceil(parseInt(karacForm[3]) /2) -2;
+    
+    document.getElementById("base_hum_vp").innerHTML = baseHumVp;
+    document.getElementById("base_hum_hum").innerHTML = baseHumHum;
+    document.getElementById("base_hum_spec").innerHTML = baseHumSpec;
+};
+
+// fonction qui calcul des valeurs de la base en CP pour INT à partir de karacForm
+function calculBaseInt(){
+    let baseIntVp = Math.ceil(parseInt(karacForm[4]) /2);
+    let baseIntHum = Math.floor(parseInt(karacForm[4]) /2);
+    let baseIntSpec = Math.ceil(parseInt(karacForm[4]) /2);
+    
+    document.getElementById("base_int_vp").innerHTML = baseIntVp;
+    document.getElementById("base_int_hum").innerHTML = baseIntHum;
+    document.getElementById("base_int_spec").innerHTML = baseIntSpec;
+};
+
+// fonction qui calcul des valeurs de la base en CP pour PER à partir de karacForm
+function calculBasePer(){
+    let basePerVp = Math.ceil(parseInt(karacForm[1]) /2)+1;
+    let basePerHum = Math.floor(parseInt(karacForm[1]) /2);
+    let basePerSpec = Math.ceil(parseInt(karacForm[1]) /2)+3;
+    let basePerGar = Math.ceil(parseInt(karacForm[1]) /2)+4;
+    
+    document.getElementById("base_per_vp").innerHTML = basePerVp;
+    document.getElementById("base_per_hum").innerHTML = basePerHum;
+    document.getElementById("base_per_spec").innerHTML = basePerSpec;
+    document.getElementById("base_per_gar").innerHTML = basePerGar;
+};
+
+// fonction qui calcul des valeurs de la base en CP pour ADR à partir de karacForm
+function calculBaseAdr(){
+    let baseAdrVp = Math.ceil(parseInt(karacForm[5]) /2);
+    let baseAdrHum = Math.floor(parseInt(karacForm[5]) /2);
+    
+    document.getElementById("base_adr_vp").innerHTML = baseAdrVp;
+    document.getElementById("base_adr_hum").innerHTML = baseAdrHum;
+};
+
+// fonction qui calcul la valeur du MC de l'humain à partir de karacForm
+function calculMcHum(){
+    
+
+    
+    console.log("base adr vp = ", baseAdrVp);
+
+    document.getElementById("mc_hum").innerHTML = baseAdrVp;
+    
+};
+
+
+
 
 // bouton de répartition auto du jet de dés => select value in new array
 
@@ -529,6 +621,13 @@ valideBtn.addEventListener("click", () => {
     calculKaracGar();
     calculKaracSpec();
     calculAttributs();
+    calculBaseRef();
+    calculBaseAgi();
+    calculBaseVol();
+    calculBaseHum();
+    calculBaseInt();
+    calculBasePer();
+    calculBaseAdr();
     }
 })
 
@@ -574,6 +673,13 @@ getKarac.addEventListener("click", () => {
     calculKaracGar();
     calculKaracSpec();
     calculAttributs();
+    calculBaseRef();
+    calculBaseAgi();
+    calculBaseVol();
+    calculBaseHum();
+    calculBaseInt();
+    calculBasePer();
+    calculBaseAdr();
 });
 
 

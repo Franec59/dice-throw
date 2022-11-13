@@ -239,6 +239,7 @@ h3{
 .caract{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 1rem;
 
 }
@@ -255,6 +256,7 @@ h3{
     margin: 1rem;
     padding: 5px;
     height: 100%;
+    border-radius: 15px 15px 15px 15px;
 }
 
 label{
@@ -331,6 +333,11 @@ label, input{
   }
 }
 
+.mode_combat{
+    margin-top: 0.5rem;
+    color: burlywood;
+}
+
 @media screen and (min-width: 1024px) {
     .tapis{
         width: 95%;
@@ -353,10 +360,10 @@ label, input{
 
 }
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
 
     .caract{
         flex-wrap: wrap;
         
         }
-}
+} */
