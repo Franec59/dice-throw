@@ -591,15 +591,51 @@ function calculBaseAdr(){
     document.getElementById("base_adr_hum").innerHTML = baseAdrHum;
 };
 
-// fonction qui calcul la valeur du MC de l'humain à partir de karacForm
-function calculMcHum(){
+// fonction qui calcul la valeur du MC à partir de karacForm
+function calculMc(){
+    let endMcHum = parseInt(karacForm[7]);
+    let mcHum = 0;
+    if (endMcHum >= 5 && endMcHum < 8){
+        mcHum = 1;
+    } else if (endMcHum >= 9 && endMcHum <= 12){
+        mcHum = 2;
+    } else if (endMcHum >= 13 && endMcHum <= 16){
+        mcHum = 3;
+    } else {
+        mcHum = "error"
+    };
     
+    let mcVp = parseInt(mcHum) +2;
+    let mcLyc = parseInt(mcHum) +5;
+    let mcGar = parseInt(mcHum) +2;
 
-    
-    console.log("base adr vp = ", baseAdrVp);
+    // console.log("END hum = ", endMcHum);
+    // console.log("mc hum = ", mcHum);
 
-    document.getElementById("mc_hum").innerHTML = baseAdrVp;
+    document.getElementById("mc_vp").innerHTML = mcVp;
+    document.getElementById("mc_hum").innerHTML = mcHum;
+    document.getElementById("mc_lyc").innerHTML = mcLyc;
+    document.getElementById("mc_gar").innerHTML = mcGar;
     
+};
+
+// fonction qui calcul la valeur de l'EMC à partir de karacForm
+function calculEmc(){
+    let force = parseInt(karacForm[8]);
+    console.log("force : ",force )
+    let malusEmc = "";
+    if (force >= 5 && force <= 8){
+        malusEmc = "Malus de 1 pour 1 pts d’Enc";
+    } else if (force >= 9 && force <= 11){
+        malusEmc = "Malus de 1 pour 2 pts d’Enc";
+    } else if (force >= 12 && force <= 15){
+        malusEmc = "Malus de 1 pour 3 pts d’Enc";
+    } else {
+        malusEmc = "error"
+    };
+    
+    document.getElementById("malus_enc").innerHTML = malusEmc;
+    console.log("malus enc : ", malusEmc);
 };
 
 
@@ -628,6 +664,8 @@ valideBtn.addEventListener("click", () => {
     calculBaseInt();
     calculBasePer();
     calculBaseAdr();
+    calculMc();
+    calculEmc();
     }
 })
 
@@ -680,6 +718,8 @@ getKarac.addEventListener("click", () => {
     calculBaseInt();
     calculBasePer();
     calculBaseAdr();
+    calculMc();
+    calculEmc();
 });
 
 

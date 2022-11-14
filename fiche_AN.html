@@ -16,8 +16,7 @@
 <body>
     <div class="topnav" id="myTopnav">
         <a href="index.html" class="active">Caliban-Grim</a>
-        <a href="agenoir.html" class="navlink">L'Age Noir</a>
-        <a href="fiche_AN.html" class="navlink">Fiche de jeu</a>
+        <a href="fiche_AN.html" class="navlink">AN_Stats</a>
         <a href="#contact" class="navlink">Règles Alternatives</a>
         <a href="#about" class="navlink">Cyberpunk</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -189,21 +188,21 @@
             </div>
 
             <div class="form">
-                <h2>Attibuts</h2>
+                <h2 class="case_title">Attibuts</h2>
                 <h3 class="repartition">Calcul auto</h3>
             
                 <div class="karac_form">
-                    <h3 class="spanform">Points de sang = <span id="pts_sang"></span></h3>
-                    <h3>Points d'aura</h3>
+                    <h3 class="redline">Points de sang = <span id="pts_sang"></span></h3>
+                    <h3 class="greentitle">Points d'aura</h3>
                     <h3 class="spanform">Env physique = <span id="aura_phy"></span></h3>
                     <h3 class="spanform">Env magique = <span id="aura_magi"></span></h3>
                     <h3 class="spanform">Env surnaturelle = <span id="aura_surna"></span></h3>
-                    <h3 class="spanform">Aura total = <span id="total_aura"></span></h3>
+                    <h3 class="greenline">Aura total = <span id="total_aura"></span></h3>
                 </div>   
             </div>
             
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en REFLEXE</h3>
             
                 <div class="karac_form">
@@ -216,7 +215,7 @@
             </div>
 
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en AGILITE</h3>
             
                 <div class="karac_form">
@@ -226,7 +225,7 @@
             </div>
 
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en VOLONTE</h3>
             
                 <div class="karac_form">
@@ -237,7 +236,7 @@
             </div>
 
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en HUMANITE</h3>
             
                 <div class="karac_form">
@@ -248,7 +247,7 @@
             </div>
 
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en INTELLIGENCE</h3>
             
                 <div class="karac_form">
@@ -259,7 +258,7 @@
             </div>
 
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en PERCEPTION</h3>
             
                 <div class="karac_form">
@@ -271,7 +270,7 @@
             </div>
 
             <div class="form">
-                <h2>Compétence</h2>
+                <h2 class="case_title">Compétence</h2>
                 <h3 class="repartition">Base en ADRESSE</h3>
             
                 <div class="karac_form">
@@ -281,11 +280,19 @@
             </div>
 
             <div class="form">
-                <h2>Mode de combat</h2>
+                <h2 class="case_title">Mode de combat</h2>
             
                 <div class="karac_form">
                     <h3 class="mode_combat">MC</h3>
+                    <h3 class="spanform">Vampire = <span id="mc_vp"></span></h3> 
                     <h3 class="spanform">Humain = <span id="mc_hum"></span></h3> 
+                    <h3 class="spanform">Lycan = <span id="mc_lyc"></span></h3> 
+                    <h3 class="spanform">Gargouille = <span id="mc_gar"></span></h3> 
+                    <h3 class="spanform">Spectre = x</h3> 
+                </div>   
+                <div class="karac_form">
+                    <h3 class="mode_combat">ENC</h3>
+                    <h3 class="spanform"><span id="malus_enc"></span> </h3> 
                 </div>   
             </div>
 
