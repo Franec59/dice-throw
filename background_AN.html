@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Background d'un personnage pour l'Age Noir">
+
+    <title>AN_Background</title>
+    <link rel="stylesheet" href="./styles/background.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./range.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Caliban-Grim</a>
+        <a href="background_AN.html" class="navlink">AN_background</a>
+        <a href="fiche_AN.html" class="navlink">AN_Stats</a>
+        <a href="#contact" class="navlink">Règles Alternatives</a>
+        <a href="#about" class="navlink">Cyberpunk</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+    <div class="container">
+        <div class="introduction">
+            <h1>Les Chroniques de l'Age Noir</h1>
+            <h2>Background d'un personnage</h2>
+            <h3 class="titre2">Cliquez sur chaque rubrique pour construire l'histoire de votre personnage</h3>
+            
+        </div><!--fin d'introduction-->
+
+        <div class="form">
+            <h2 class="titre_form">Ethnie du personnage !</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_destin">Choisis ton destin</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="origine" class="phrase_intro"></span></h3>
+                <h3 class="spanform2"><span id="ethnie"></span></h3> 
+            </div>   
+        </div>
+
+        <div class="form">
+            <h2 class="titre_form">Contrée où il a vécu en tant qu'humain !</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_contree">Choisis ton destin</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="intro_contree" class="phrase_intro"></span></h3>
+                <h3 class="spanform2"><span id="contree"></span></h3> 
+            </div>   
+        </div>
+
+        <div class="form">
+            <h2 class="titre_form">Milieu social qui l'a vue naître !</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_social">Choisis ton destin</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="intro_social" class="phrase_intro"></span></h3>
+                <h3 class="spanform2"><span id="social"></span></h3> 
+            </div>   
+        </div>
+
+        <div class="form">
+            <h2 class="titre_form">Lieu ou il à vécu dans sa vie d'homme !</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_lieu">Choisis ton destin</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="intro_lieu" class="phrase_intro"></span></h3>
+                <h3 class="spanform2"><span id="lieu"></span></h3> 
+            </div>   
+        </div>
+
+        <div class="form">
+            <h2 class="titre_form">Métier qu'il a déjà exercé !</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_metier">Choisis ton destin</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="intro_metier" class="phrase_intro"></span></h3>
+                <h3 class="spanform2"><span id="metier"></span></h3> 
+            </div>   
+        </div>
+
+    </div> <!--fin de container -->
+
+
+    <script src="./scripts/background.js"></script>
+</body>
+</html>
