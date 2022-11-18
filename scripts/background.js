@@ -27,28 +27,31 @@ function myFunction() {
 
 
 const ethnie = {
-    eth0 : "Umélorien",
-    eth1 : "Cassar",
-    eth2 : "Khaler",
-    eth3 : "Soloman",
-    eth4 : "Effarat",
-    eth5 : "Djazar",
-    eth6 : "Stovenger",
-    eth7 : "Keshite",
-    eth8 : "Shivalinga",
-    eth9 : "Sang-mélée",
-    eth10 : "Azayas"
+    eth0 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population civilisée, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth1 : ["Cassar","Cousins des uméloriens, les cassars sont des barbares de grandes tailles, souvent robustes et musclés. Ils vivent plutôt en grandes tribus de l'élevage et de la chasse."],
+    eth2 : ["Khaler","Peuple trés policé, les khalers ont la peau mat et les yeux noirs. Ils vivents sous le soleil brûlant des zones désertiques et sont organisés en grands émirats au sein de belle cités blanches où le commerce est roi."],
+    eth3 : ["Soloman", "Peau légèrement mat et cheveux frisés, les solomans sont d'élégant gaillard portant fièrement la barbe, signe de sagesse. Ils vivent à cheval sur un vaste empire dont ils parcourent les terres agricoles qui s'étendent entre les villes fortifiés."],
+    eth4 : ["Effarat", "Cousins des Khalers mais de plus grande taille, les effarats sont des nomades sillonnant le grand désert blanc avec leurs troupeaux. Malgré leur pauvreté, ils vous partageront toujours leur plus grande richesse : l'eau !"],
+    eth5 : ["Djazar", "Peau noire, cheveux noirs et crépus, les Djazars sont de grands gaillards robustes et athlétiques vivant en tribu dans les savanes et les jungles situés au dela du désert blanc." ],
+    eth6 : ["Stovenger", "Cheveleures longues, blondes ou rousses, grands et musclés, les stovengers sont des barbares du nord. Marin dans l'âme, ils vivent en clan, souvent de pillages et de raides sur les côtes voisines."],
+    eth7 : ["Keshite", "Les keshites ont la peau jaunes et les yeux bridés. Plutôt de petites tailles, ils vivent loin à l'est au sein de royaumes fabuleux dont ils viennent commercer de suprenantes inventions."],
+    eth8 : ["Shivalinga", "Plutôt petits, la peau mat foncée, ils vivent dans un vaste royaume fait de fleuves et de jungle, loin à l'est et pratique l'élevage et l'agriculture"],
+    eth9 : ["Sang-mélée", "Humain/elfe ou humain/félis, les sangs mélés sont souvent mal perçu voir rejeté par la population." ],
+    eth10 : ["Izganes", "Peau blanche ou lègèrement mat, les izganes sont un peuple nomade et déraciné, se déplaçant en caravane de villes en villages à travers le monde connu."],
+    eth11 : ["Azayas", "Peuple d'au delà de la grande mer, les azayas ont la peau rouge. Civilisation avancée, ils ont batit d'immenses villes de pierres entre jungle et montagne qui regorgeraient d'or et de richesse incroyable."]
 };
 
 // fonction qui affiche l'ethnie du personnage dans le DOM aléatoirement
 function afficherEthnie(){
-    const randomIndexEthnie = Math.floor(Math.random() * 11);
+    const randomIndexEthnie = Math.floor(Math.random() * 12);
     console.log("chiffre random : ", randomIndexEthnie)
     const indexEthnieSelected = Object.values(ethnie)[randomIndexEthnie];
     console.log(indexEthnieSelected);
 
     document.getElementById("origine").innerHTML = "Ton peuple d'origine est";
-    document.getElementById("ethnie").innerHTML = indexEthnieSelected;
+    // document.getElementById("ethnie").innerHTML = indexEthnieSelected;
+    document.getElementById("ethnie").innerHTML = indexEthnieSelected[0];
+    document.getElementById("description").innerHTML = indexEthnieSelected[1];
 };
 
 //Bouton ethnie
