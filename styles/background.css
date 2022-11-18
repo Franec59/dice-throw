@@ -99,12 +99,19 @@ h3{
     text-decoration: underline;
     text-shadow: 2px 2px 2px black;
     color:wheat;
+    text-align: center;
+    
 }
 
 .spanform2{
     margin-top: -5px;
+    text-align: center;
 }
 
 .phrase_intro{
     color:rgb(235, 139, 75);
+}
+
+.spanform{
+    text-align: center;
 }

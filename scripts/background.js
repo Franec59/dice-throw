@@ -11,6 +11,20 @@ const valideBtnContree = document.getElementById("valide_contree");
 const valideBtnSocial = document.getElementById("valide_social");
 const valideBtnLieu = document.getElementById("valide_lieu");
 const valideBtnmetier = document.getElementById("valide_metier");
+const valideBtnreligion = document.getElementById("valide_religion");
+
+//partie responsive navbar -------------------------------------
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+//=====================================================================
+
+
 
 const ethnie = {
     eth0 : "Umélorien",
@@ -218,4 +232,51 @@ function affichermetier(){
 //Bouton metier
 valideBtnmetier.addEventListener("click", () => { 
     affichermetier();
+})
+
+// religion ==============================================================
+const religion = {
+    religion0 : "Khorne, le dieu du sang et seigneur des crânes.",
+    religion1 : "Nurgle, le seigneur de la déchéance, maitre de la pourriture et de la pestilence.",
+    religion2 : "Slaanesh, le magnifique prince du chaos, séduisant et pervers dans ses faveurs surnaturelles.",
+    religion3 : "Tzeentch, l'architecte du changement, appelé aussi le grand sorcier.",
+    religion4 : "Calis, la déesse de la torture, du viol et du pillage.",
+    religion5 : "Valind, le dieu des combats et du courage.",
+    religion6 : "Féria, la déesse de la lumière.",
+    religion7 : "Golod, le dieu du chaos et du cancer cosmique.",
+    religion8 : "Ténéra, la Déesse de la nuit et de l’obscurité protectrice.",
+    religion9 : "Arlam et adère au culte de la pensée. Maudit sois tu, blasphémateur !",
+    religion10 : "Thanatar, le dieu des champs de batailles et des armée ténébreuses.",
+    religion11 : "Crôm et tu te débrouilles avec ça ...",
+    religion12 : "Hypnos & Thanatos.",
+    religion13 : "Naggash, pour qu'il ne te tue pas tout de suite !!",
+    religion14 : "les Grands Anciens : Cthulhu et Azatoth.",
+    religion15 : "Gorgona, la maitresse des goules. Aucun respect pour toi même !",
+    religion16 : "Vorala, le dieu de la vengeance et de la haine.",
+    religion17 : "en silence, sans rien dire à personne ...",
+    religion18 : "aucun dieu car tu es athé !",
+    religion19 : "personne car tu maudits les dieux de toutes sortes !!!",
+    religion20 : "certainement pas ces fantoches, qui ne sont là que pourt te tourmenter !",
+    religion21 : "pour que les dieux t'oublient aprés tout ce que tu as fait pour les énerver !",
+    religion22 : "pour que les dieux te pardonnent et sinon qu'ils aillent se faire voir !",
+    religion23 : "pour que les dieux t'accueillent à leurs côtés car tu es leur égale aprés tout !",
+    religion24 : "juste pour te servir d'eux car au fond tu les méprises !",
+    religion25 : "pour pouvoir les combattre et leur faire payer ce qu'ils t'ont fait subir !",
+
+};
+
+// fonction qui affiche la religion du personnage dans le DOM aléatoirement
+function afficherReligion(){
+    const randomIndexreligion = Math.floor(Math.random() * 26);
+    console.log("chiffre random : ", randomIndexreligion)
+    const indexreligionSelected = Object.values(religion)[randomIndexreligion];
+    console.log(indexreligionSelected);
+
+    document.getElementById("intro_religion").innerHTML = "Afin d'accomplir ta destinée et peut être gagner quelques points de destin, chaque jour tu pries";
+    document.getElementById("religion").innerHTML = indexreligionSelected;
+};
+
+//Bouton religion
+valideBtnreligion.addEventListener("click", () => { 
+    afficherReligion();
 })
