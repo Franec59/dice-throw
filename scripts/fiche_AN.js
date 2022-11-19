@@ -18,15 +18,7 @@ var karac = [];
 var karacSelected = [];
 var karacForm = [];
 
-//partie responsive navbar -------------------------------------
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+
 //=====================================================================
 
 // jouer 2 cubes du score 1
@@ -631,11 +623,84 @@ function calculEmc(){
     } else if (force >= 12 && force <= 15){
         malusEmc = "Malus de 1 pour 3 pts d’Enc";
     } else {
-        malusEmc = "error"
+        malusEmc = "error ENC"
     };
     
     document.getElementById("malus_enc").innerHTML = malusEmc;
     console.log("malus enc : ", malusEmc);
+};
+
+// fonction qui calcul la valeur du bonus en degats à partir de karacForm
+function calculBd(){
+    // humain
+    let force = parseInt(karacForm[8]);
+    console.log("force : ",force )
+    let bonusDeg = "";
+    if (force >= 8 && force <= 10){
+        bonusDeg = 1;
+    } else if (force >= 11 && force <= 13){
+        bonusDeg = 2;
+    } else if (force >= 14 && force <= 16){
+        bonusDeg = 3;
+    } else if (force >= 17 ){
+        bonusDeg = 4;
+    } else {
+        bonusDeg = "error bonus degats"
+    };
+
+    // vampire
+    let forceVp = parseInt(karacForm[8])+2;
+    console.log("force VP : ",forceVp )
+    let bonusDegVp = "";
+    if (forceVp >= 8 && forceVp <= 10){
+        bonusDegVp = 1;
+    } else if (forceVp >= 11 && forceVp <= 13){
+        bonusDegVp = 2;
+    } else if (forceVp >= 14 && forceVp <= 16){
+        bonusDegVp = 3;
+    } else if (forceVp >= 17 ){
+        bonusDegVp = 4;
+    } else {
+        bonusDegVp = "error bonus degats Vp"
+    };
+
+    // lycan
+    let forceLy = parseInt(karacForm[8])+8;
+    console.log("force Lycan : ",forceLy )
+    let bonusDegLy = "";
+    if (forceLy >= 8 && forceLy <= 10){
+        bonusDegLy = 1;
+    } else if (forceLy >= 11 && forceLy <= 13){
+        bonusDegLy = 2;
+    } else if (forceLy >= 14 && forceLy <= 16){
+        bonusDegLy = 3;
+    } else if (forceLy >= 17 ){
+        bonusDegLy = 4;
+    } else {
+        bonusDegLy = "error bonus degats Ly"
+    };
+
+    // gargouille
+    let forceGa = parseInt(karacForm[8])+4;
+    console.log("force gar : ",forceGa )
+    let bonusDegGa = "";
+    if (forceGa >= 8 && forceGa <= 10){
+        bonusDegGa = 1;
+    } else if (forceGa >= 11 && forceGa <= 13){
+        bonusDegGa = 2;
+    } else if (forceGa >= 14 && forceGa <= 16){
+        bonusDegGa = 3;
+    } else if (forceGa >= 17 ){
+        bonusDegGa = 4;
+    } else {
+        bonusDegGa = "error bonus degats gar"
+    };
+    
+    document.getElementById("bd_hum").innerHTML = bonusDeg;
+    document.getElementById("bd_vp").innerHTML = bonusDegVp +2;
+    document.getElementById("bd_lyc").innerHTML = bonusDegLy +5;
+    document.getElementById("bd_gar").innerHTML = bonusDegGa;
+    
 };
 
 
@@ -666,6 +731,7 @@ valideBtn.addEventListener("click", () => {
     calculBaseAdr();
     calculMc();
     calculEmc();
+    calculBd();
     }
 })
 
@@ -720,6 +786,7 @@ getKarac.addEventListener("click", () => {
     calculBaseAdr();
     calculMc();
     calculEmc();
+    calculBd();
 });
 
 

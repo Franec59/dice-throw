@@ -16,9 +16,9 @@
 <body>
     <div class="topnav" id="myTopnav">
         <a href="index.html" class="active">Caliban-Grim</a>
+        <a href="index.html" class="navlink">Lancer de dés</a>
         <a href="background_AN.html" class="navlink">AN_background</a>
         <a href="fiche_AN.html" class="navlink">AN_Stats</a>
-        <a href="#contact" class="navlink">Règles Alternatives</a>
         <a href="#about" class="navlink">Cyberpunk</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
@@ -289,7 +289,7 @@
                     <h3 class="spanform">Humain = <span id="mc_hum"></span></h3> 
                     <h3 class="spanform">Lycan = <span id="mc_lyc"></span></h3> 
                     <h3 class="spanform">Gargouille = <span id="mc_gar"></span></h3> 
-                    <h3 class="spanform">Spectre = x</h3> 
+                    <h3 class="spanform">Spectre = --</h3> 
                 </div>   
                 <div class="karac_form">
                     <h3 class="mode_combat">ENC</h3>
@@ -312,8 +312,18 @@
                     <h3 class="spanform">Lycan = 5</span></h3> 
                     <h3 class="spanform">Gargouille = 9</span></h3> 
                     <h3 class="spanform">Spectre = 2</h3> 
-                </div>     
-            </div>
+                </div>
+                
+                <div class="karac_form">
+                    <h3 class="mode_combat">Bonus aux dégâts</h3>
+                    <h3 class="spanform">Vampire = <span id="bd_vp"></span></h3> 
+                    <h3 class="spanform">Humain = <span id="bd_hum"></span></h3> 
+                    <h3 class="spanform">Lycan = <span id="bd_lyc"></span></h3> 
+                    <h3 class="spanform">Gargouille = <span id="bd_gar"></span></h3> 
+                    <h3 class="spanform">Spectre = --</h3> 
+                </div>  
+
+            </div> <!--fin de form-->
 
         </div><!--fin de caract-->
         
@@ -321,5 +331,6 @@
 
 
     <script src="./scripts/fiche_AN.js"></script>
+    <script src="./scripts/navbar.js"></script>
 </body>
 </html>

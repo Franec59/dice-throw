@@ -13,18 +13,8 @@ const valideBtnLieu = document.getElementById("valide_lieu");
 const valideBtnmetier = document.getElementById("valide_metier");
 const valideBtnreligion = document.getElementById("valide_religion");
 
-//partie responsive navbar -------------------------------------
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+
 //=====================================================================
-
-
 
 const ethnie = {
     eth0 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population civilisée, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],

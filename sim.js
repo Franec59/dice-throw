@@ -16,15 +16,7 @@ const lancerBtn = document.getElementById("lancer-btn");
 var arrayResult = [];
 var arrayCollect = [];
 
-//partie responsive navbar -------------------------------------
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-  }
+
 //=====================================================================
 
 function playD () {
