@@ -81,7 +81,7 @@ h3, h4{
 }
 
 .spanform2{
-    margin-top: -0.5rem;
+    margin-top: -1rem;
 }
 
 .power{
@@ -93,6 +93,12 @@ h3, h4{
 strong{
     text-decoration: underline;
     color: burlywood;
+}
+
+.sous_forme{
+    margin-top: -1.2rem;
+    font-style: italic;
+
 }
 
 @media screen and (max-width: 400px) {
