@@ -12,6 +12,7 @@ const valideBtnSocial = document.getElementById("valide_social");
 const valideBtnLieu = document.getElementById("valide_lieu");
 const valideBtnmetier = document.getElementById("valide_metier");
 const valideBtnreligion = document.getElementById("valide_religion");
+const valideBtnOrigineVp = document.getElementById("valide_origine_vp");
 
 
 //=====================================================================
@@ -272,4 +273,56 @@ function afficherReligion(){
 //Bouton religion
 valideBtnreligion.addEventListener("click", () => { 
     afficherReligion();
+})
+
+
+// origine ténébreuse ==============================================================
+
+const pereVp = {
+    pereVp0 : "un père vampirique",
+    pereVp1 : "une mère vampirique",
+};
+
+const origine_vp = {
+    origine_vp0 : "à qui tu t'es donné sans réserve car tu voulais rejoindre les ténébres ...",
+    origine_vp1 : "qui ne t'as pas laissé le choix !",
+    origine_vp2 : "qui t'as enlevé à tes parents pour te préparer à ce moment !",
+    origine_vp3 : "inconnu qui t'as laissé pour mort juste aprés ...",
+    origine_vp4 : "qui t'as ensuite initié aux ténébres au sein de ta lignée !",
+    origine_vp5 : "pour te livrer à l'inquisition afin de couvrir ses traces mais tu as survécu ...",
+    origine_vp6 : "car tu étais tout désigné pour rejopindre sa lignée !",
+    origine_vp7 : "pour t'offrir en sacrifice aux dieux mais ceux-ci ont rejeté l'offrande ...",
+    origine_vp8 : "pour te punir de tous tes péchés de ta vie humaine !",
+    origine_vp9 : "car ta soif de sang était déjà là en toi !",
+    origine_vp10 : "au cours d'un rituel de clan pour rejoindre leur rang !",
+    origine_vp11 : "qui a ensuite essayé de te détruire en comprenant son erreur ...",
+    origine_vp12 : "que tu as tué dans la frénésie de ta venue au monde des ténébres !",
+    origine_vp13 : "qui t'as ensuite abandonné à ton destin !",
+    origine_vp14 : "sur qui tu peux toujours compter aujourd'hui !",
+
+};
+
+//fonction qui affiche le pere ou la mère vampire du perso
+function pereMere(){
+    const randomIndexpereVp = Math.floor(Math.random() * 2);
+    console.log("pere mere", randomIndexpereVp)
+    const indexPereVpSelected = Object.values(pereVp)[randomIndexpereVp];
+
+    document.getElementById("intro_origine_vp").innerHTML = "Le don ténébreux t'a été accordé par";
+    document.getElementById("pere_vp").innerHTML = indexPereVpSelected;
+
+}
+
+// fonction qui affiche l'origine ténébreuse du personnage dans le DOM aléatoirement
+function afficherOrigine_vp(){
+    const randomIndexOrigineVp = Math.floor(Math.random() * 15);
+    const indexOrigineVpSelected = Object.values(origine_vp)[randomIndexOrigineVp];
+    console.log("origine des ténébres", indexOrigineVpSelected)
+    document.getElementById("origine_vp").innerHTML = indexOrigineVpSelected;
+};
+
+//Bouton origine_vp
+valideBtnOrigineVp.addEventListener("click", () => { 
+    pereMere()
+    afficherOrigine_vp();
 })
