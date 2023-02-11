@@ -474,7 +474,7 @@ function calculKaracSpec(){
     let adrSpec = parseInt(karacForm[5]) -6;
     let agiSpec = parseInt(karacForm[6]) +8;
     let endSpec = parseInt(karacForm[7]);
-    let forSpec = 0;
+    let forSpec = Math.round(parseInt(karacForm[8]) /2)
     let btSpec = Math.round(parseInt(karacForm[9]) /2);
 
     document.getElementById("ref_spec").innerHTML = refSpec;
@@ -553,12 +553,8 @@ function calculBaseHum(){
 // fonction qui calcul des valeurs de la base en CP pour INT à partir de karacForm
 function calculBaseInt(){
     let baseIntVp = Math.ceil(parseInt(karacForm[4]) /2);
-    let baseIntHum = Math.floor(parseInt(karacForm[4]) /2);
-    let baseIntSpec = Math.ceil(parseInt(karacForm[4]) /2);
     
     document.getElementById("base_int_vp").innerHTML = baseIntVp;
-    document.getElementById("base_int_hum").innerHTML = baseIntHum;
-    document.getElementById("base_int_spec").innerHTML = baseIntSpec;
 };
 
 // fonction qui calcul des valeurs de la base en CP pour PER à partir de karacForm
@@ -577,32 +573,30 @@ function calculBasePer(){
 // fonction qui calcul des valeurs de la base en CP pour ADR à partir de karacForm
 function calculBaseAdr(){
     let baseAdrVp = Math.ceil(parseInt(karacForm[5]) /2);
-    let baseAdrHum = Math.floor(parseInt(karacForm[5]) /2);
     
     document.getElementById("base_adr_vp").innerHTML = baseAdrVp;
-    document.getElementById("base_adr_hum").innerHTML = baseAdrHum;
 };
 
 // fonction qui calcul la valeur du MC à partir de karacForm
 function calculMc(){
     let endMcHum = parseInt(karacForm[7]);
+    console.log("MC hum", endMcHum);
     let mcHum = 0;
-    if (endMcHum >= 5 && endMcHum < 8){
+    if (endMcHum >= 1 && endMcHum <= 7){
+        mcHum = 0;
+    } else if (endMcHum >= 8 && endMcHum <= 12){
         mcHum = 1;
-    } else if (endMcHum >= 9 && endMcHum <= 12){
-        mcHum = 2;
     } else if (endMcHum >= 13 && endMcHum <= 16){
+        mcHum = 2;
+    } else if (endMcHum >= 17){
         mcHum = 3;
     } else {
-        mcHum = "error"
+        mcHum = "Oups !"
     };
     
-    let mcVp = parseInt(mcHum) +2;
-    let mcLyc = parseInt(mcHum) +5;
+    let mcVp = parseInt(mcHum) +1;
+    let mcLyc = parseInt(mcHum) +3;
     let mcGar = parseInt(mcHum) +2;
-
-    // console.log("END hum = ", endMcHum);
-    // console.log("mc hum = ", mcHum);
 
     document.getElementById("mc_vp").innerHTML = mcVp;
     document.getElementById("mc_hum").innerHTML = mcHum;
@@ -616,14 +610,20 @@ function calculEmc(){
     let force = parseInt(karacForm[8]);
     console.log("force : ",force )
     let malusEmc = "";
-    if (force >= 5 && force <= 8){
-        malusEmc = "Malus de 1 pour 1 pts d’Enc";
-    } else if (force >= 9 && force <= 11){
-        malusEmc = "Malus de 1 pour 2 pts d’Enc";
-    } else if (force >= 12 && force <= 15){
-        malusEmc = "Malus de 1 pour 3 pts d’Enc";
+    if (force >= 1 && force <= 5){
+        malusEmc = "Malus de 1 pour 4 pts Enc";
+    } else if (force >= 6 && force <= 10){
+        malusEmc = "Malus de 1 pour 5 pts Enc";
+    } else if (force >= 11 && force <= 13){
+        malusEmc = "Malus de 1 pour 6 pts Enc";
+    } else if (force >= 14 && force <= 16){
+        malusEmc = "Malus de 1 pour 7 pts Enc";
+    } else if (force >= 17 && force <= 19){
+        malusEmc = "Malus de 1 pour 8 pts Enc";
+    } else if (force >= 20){
+        malusEmc = "Malus de 1 pour 9 pts Enc";
     } else {
-        malusEmc = "error ENC"
+        malusEmc = "Oups !"
     };
     
     document.getElementById("malus_enc").innerHTML = malusEmc;
@@ -634,9 +634,11 @@ function calculEmc(){
 function calculBd(){
     // humain
     let force = parseInt(karacForm[8]);
-    console.log("force : ",force )
+    console.log("BoD force : ",force )
     let bonusDeg = "";
-    if (force >= 8 && force <= 10){
+    if (force >= 1 && force <= 7){
+        bonusDeg = 0;
+    } else if (force >= 8 && force <= 10){
         bonusDeg = 1;
     } else if (force >= 11 && force <= 13){
         bonusDeg = 2;
@@ -645,7 +647,7 @@ function calculBd(){
     } else if (force >= 17 ){
         bonusDeg = 4;
     } else {
-        bonusDeg = "error bonus degats"
+        bonusDeg = "Oups !"
     };
 
     // vampire

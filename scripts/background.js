@@ -255,13 +255,19 @@ const religion = {
     religion22 : "pour que les dieux te pardonnent et sinon qu'ils aillent se faire voir !",
     religion23 : "pour que les dieux t'accueillent à leurs côtés car tu es leur égale aprés tout !",
     religion24 : "juste pour te servir d'eux car au fond tu les méprises !",
-    religion25 : "pour pouvoir les combattre et leur faire payer ce qu'ils t'ont fait subir !",
+    religion25 : "pour pouvoir les combattre et leur faire payer tout ce qu'ils t'ont fait subir !",
+    religion26 : "Zuvassin le défaiseur !",
+    religion27 : "Necoho le septique !",
+    religion28 : "Malal le banni !",
+    religion29 : "Arthagos le seigneur des Bêtes !",
+    religion30 : "Rhasneth, dieu de la démense !",
+    religion31 : "Miséris, la déesse de la misère !",
 
 };
 
 // fonction qui affiche la religion du personnage dans le DOM aléatoirement
 function afficherReligion(){
-    const randomIndexreligion = Math.floor(Math.random() * 26);
+    const randomIndexreligion = Math.floor(Math.random() * 32);
     console.log("chiffre random : ", randomIndexreligion)
     const indexreligionSelected = Object.values(religion)[randomIndexreligion];
     console.log(indexreligionSelected);
@@ -285,20 +291,23 @@ const pereVp = {
 
 const origine_vp = {
     origine_vp0 : "à qui tu t'es donné sans réserve car tu voulais rejoindre les ténébres ...",
-    origine_vp1 : "qui ne t'as pas laissé le choix !",
-    origine_vp2 : "qui t'as enlevé à tes parents pour te préparer à ce moment !",
-    origine_vp3 : "inconnu qui t'as laissé pour mort juste aprés ...",
-    origine_vp4 : "qui t'as ensuite initié aux ténébres au sein de ta lignée !",
+    origine_vp1 : "qui ne t'a pas laissé le choix !",
+    origine_vp2 : "qui t'a enlevé à tes parents pour te préparer à ce moment !",
+    origine_vp3 : "inconnu qui t'a laissé pour mort juste aprés ...",
+    origine_vp4 : "qui t'a ensuite initié aux ténébres au sein de sa lignée !",
     origine_vp5 : "pour te livrer à l'inquisition afin de couvrir ses traces mais tu as survécu ...",
     origine_vp6 : "car tu étais tout désigné pour rejopindre sa lignée !",
     origine_vp7 : "pour t'offrir en sacrifice aux dieux mais ceux-ci ont rejeté l'offrande ...",
     origine_vp8 : "pour te punir de tous tes péchés de ta vie humaine !",
-    origine_vp9 : "car ta soif de sang était déjà là en toi !",
+    origine_vp9 : "car la soif de sang a toujours été présente en toi !",
     origine_vp10 : "au cours d'un rituel de clan pour rejoindre leur rang !",
     origine_vp11 : "qui a ensuite essayé de te détruire en comprenant son erreur ...",
     origine_vp12 : "que tu as tué dans la frénésie de ta venue au monde des ténébres !",
     origine_vp13 : "qui t'as ensuite abandonné à ton destin !",
     origine_vp14 : "sur qui tu peux toujours compter aujourd'hui !",
+    origine_vp15 : "pour te récompenser de tous les péchés que tu as commis durant ta vie humaine !",
+    origine_vp16 : "dont les exploits et la rénommée au sein du sanctuaire rejaillissent sur toi !",
+    origine_vp17 : "dont la disgràce au sein du sanctuaire te porte souvent préjusdice !",
 
 };
 
