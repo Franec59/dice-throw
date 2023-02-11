@@ -308,6 +308,7 @@ const origine_vp = {
     origine_vp15 : "pour te récompenser de tous les péchés que tu as commis durant ta vie humaine !",
     origine_vp16 : "dont les exploits et la rénommée au sein du sanctuaire rejaillissent sur toi !",
     origine_vp17 : "dont la disgràce au sein du sanctuaire te porte souvent préjusdice !",
+    origine_vp18 : "que tu as trahi et qui cherche à te détruire désormais",
 
 };
 
@@ -324,7 +325,7 @@ function pereMere(){
 
 // fonction qui affiche l'origine ténébreuse du personnage dans le DOM aléatoirement
 function afficherOrigine_vp(){
-    const randomIndexOrigineVp = Math.floor(Math.random() * 15);
+    const randomIndexOrigineVp = Math.floor(Math.random() * 19);
     const indexOrigineVpSelected = Object.values(origine_vp)[randomIndexOrigineVp];
     console.log("origine des ténébres", indexOrigineVpSelected)
     document.getElementById("origine_vp").innerHTML = indexOrigineVpSelected;
