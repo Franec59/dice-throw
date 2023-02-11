@@ -400,7 +400,7 @@ function calculKaracVp(){
     let agiVp = parseInt(karacForm[6]) +2;
     let endVp = parseInt(karacForm[7]) +4;
     let forVp = parseInt(karacForm[8]) +2;
-    let btVp = parseInt(karacForm[9]) -4;
+    let btVp = parseInt(karacForm[9]) -2;
 
     document.getElementById("ref_vp").innerHTML = refVp;
     document.getElementById("per_vp").innerHTML = perVp;
