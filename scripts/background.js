@@ -18,23 +18,33 @@ const valideBtnOrigineVp = document.getElementById("valide_origine_vp");
 //=====================================================================
 
 const ethnie = {
-    eth0 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population civilisée, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth0 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
     eth1 : ["Cassar","Cousins des uméloriens, les cassars sont des barbares de grandes tailles, souvent robustes et musclés. Ils vivent plutôt en grandes tribus de l'élevage et de la chasse."],
     eth2 : ["Khaler","Peuple trés policé, les khalers ont la peau mat et les yeux noirs. Ils vivents sous le soleil brûlant des zones désertiques et sont organisés en grands émirats au sein de belle cités blanches où le commerce est roi."],
-    eth3 : ["Soloman", "Peau légèrement mat et cheveux frisés, les solomans sont d'élégant gaillard portant fièrement la barbe, signe de sagesse. Ils vivent à cheval sur un vaste empire dont ils parcourent les terres agricoles qui s'étendent entre les villes fortifiés."],
-    eth4 : ["Effarat", "Cousins des Khalers mais de plus grande taille, les effarats sont des nomades sillonnant le grand désert blanc avec leurs troupeaux. Malgré leur pauvreté, ils vous partageront toujours leur plus grande richesse : l'eau !"],
-    eth5 : ["Djazar", "Peau noire, cheveux noirs et crépus, les Djazars sont de grands gaillards robustes et athlétiques vivant en tribu dans les savanes et les jungles situés au dela du désert blanc." ],
+    eth3 : ["Soloman", "Peau légèrement mat et cheveux frisés, les solomans sont d'élégant gaillard portant fièrement la barbe, signe de sagesse. Ils vivent à cheval sur un vaste empire dont ils parcourent les terres agricoles qui s'étendent entre les villes fortifiées."],
+    eth4 : ["Effarat", "Cousins des Khalers mais de plus grande taille, les effarats sont des nomades sillonnant le grand désert blanc avec leurs troupeaux et leurs caravanes marchandes. Généreux de nature, ils vous partageront toujours leur plus grande richesse : l'eau !"],
+    eth5 : ["Djazar", "Les Djazars sont de grands gaillards à la peau noire et aux cheveux crépus. Robustes et athlétiques ils vivent en tribu dans les savanes et les jungles impénétrables situés au dela du désert blanc." ],
     eth6 : ["Stovenger", "Cheveleures longues, blondes ou rousses, grands et musclés, les stovengers sont des barbares du nord. Marin dans l'âme, ils vivent en clan, souvent de pillages et de raides sur les côtes voisines."],
-    eth7 : ["Keshite", "Les keshites ont la peau jaunes et les yeux bridés. Plutôt de petites tailles, ils vivent loin à l'est au sein de royaumes fabuleux dont ils viennent commercer de suprenantes inventions."],
-    eth8 : ["Shivalinga", "Plutôt petits, la peau mat foncée, ils vivent dans un vaste royaume fait de fleuves et de jungle, loin à l'est et pratique l'élevage et l'agriculture"],
-    eth9 : ["Sang-mélée", "Humain/elfe ou humain/félis, les sangs mélés sont souvent mal perçu voir rejeté par la population." ],
+    eth7 : ["Keshite", "Les keshites ont la peau jaunes et les yeux bridés. Plutôt de petites tailles, ils vivent loin à l'est au sein de royaumes fabuleux dont ils viennent commercer étophes somptueuses, épices et aussi de suprenantes inventions."],
+    eth8 : ["Shivalinga", "Plutôt petits, la peau mat foncée, ils vivent dans un vaste royaume fait de fleuves et de jungle, loin à l'est et pratique l'élevage et l'agriculture. Les Shivaligas érigent de grands temples pour prier leur déesse Shiva."],
+    eth9 : ["Westerosi", "Les grandes familles de Westeros sont en conflit perpétuelle pour accéder au trône, oscillant entre trahisons, complots et escarmouches dans un jeu politique sans fin !" ],
     eth10 : ["Izganes", "Peau blanche ou lègèrement mat, les izganes sont un peuple nomade et déraciné, se déplaçant en caravane de villes en villages à travers le monde connu."],
-    eth11 : ["Azayas", "Peuple d'au delà de la grande mer, les azayas ont la peau rouge. Civilisation avancée, ils ont batit d'immenses villes de pierres entre jungle et montagne qui regorgeraient d'or et de richesse incroyable."]
+    eth11 : ["Azayas", "Peuple d'au delà de la grande mer, les azayas ont la peau rouge. Civilisation avancée, ils ont batit d'immenses villes de pierres entre jungle et montagne qui regorgeraient d'or et de richesse incroyable."],
+    eth12 : ["Melnibonéen", "Peuple autrefois raffiné, noble, cruel et hautin, la socièté melnibonéenne est devenu décadente et paresseuse. Leur puissance stratégique et militaire ont laissé place aux orgies et à la débauche."],
+    eth13 : ["Dothraki", "Les Dothrakis sont un peuple de fiers cavaliers nomades d'Essos vivant dans l'immense plaine connue sous le nom de mer Dothrak. Surnommés « les seigneurs du cheval », ils sont caractérisés par un teint cuivré, des yeux bridés et des cheveux noirs tressés."],
+    eth14 : ["Cimmérien", "Pour les étrangers, la Cimmérie est un horizon de steppes balayées par des vents froids, sans villes ni civilisation. Pour les cimmériens, descendant des Athlantes, c’est une terre sauvage et indomptable qui façonne les hommes : dur et sombre."],
+    eth15 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth16 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth17 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth18 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth19 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+    eth20 : ["Umélorien", "De taille et corpulence moyenne, la peau blanche, les uméloriens sont une population riche socialement, culturellement et artistiquement parlant, vivant dans de grandes cités, militairement forte où églises et cathédrales accueillent la parole d'Arlam."],
+
 };
 
 // fonction qui affiche l'ethnie du personnage dans le DOM aléatoirement
 function afficherEthnie(){
-    const randomIndexEthnie = Math.floor(Math.random() * 12);
+    const randomIndexEthnie = Math.floor(Math.random() * 21);
     console.log("chiffre random : ", randomIndexEthnie)
     const indexEthnieSelected = Object.values(ethnie)[randomIndexEthnie];
     console.log(indexEthnieSelected);
