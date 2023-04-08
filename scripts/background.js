@@ -272,12 +272,13 @@ const religion = {
     religion29 : "Arthagos le seigneur des Bêtes !",
     religion30 : "Rhasneth, dieu de la démense !",
     religion31 : "Miséris, la déesse de la misère !",
+    religion32 : "Je ne crois guerre à l'existence des dieux. L'homme est le seul maître de son destin. Les dieux sont une création des hommes qui ont trop peur de donner des réponses.",
 
 };
 
 // fonction qui affiche la religion du personnage dans le DOM aléatoirement
 function afficherReligion(){
-    const randomIndexreligion = Math.floor(Math.random() * 32);
+    const randomIndexreligion = Math.floor(Math.random() * 33);
     console.log("chiffre random : ", randomIndexreligion)
     const indexreligionSelected = Object.values(religion)[randomIndexreligion];
     console.log(indexreligionSelected);
