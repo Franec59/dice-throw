@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Aide à la création d'un personnage pour Cyberpunk">
+
+    <title>Cyberpunk_jdr</title>
+    <link rel="stylesheet" href="./styles/cyberpunk.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./range.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Caliban-Grim</a>
+        <a href="index.html" class="navlink">Lancer de dés</a>
+        <a href="background_AN.html" class="navlink">AN_background</a>
+        <a href="fiche_AN.html" class="navlink">AN_Stats</a>
+        <a href="pouvoirs.html" class="navlink">Pouvoirs commun</a>
+        <a href="lignees.html" class="navlink">Pouvoirs lignées</a>
+        <a href="cyberpunk.html" class="navlink">Cyberpunk</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+    <div class="container">
+        <div class="introduction">
+            <h1 class="jdr_title">Cyberpunk</h1>
+            <h2>Background d'un personnage</h2>
+        
+        </div><!--fin d'introduction-->
+
+        <div class="form">
+            <h2 class="titre_form">T'es qui toi déjà ?</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valid_history">Trust the matrix ...</button> 
+            </div>
+        
+            <div class="karac_form">
+                <!-- <p class="spanform"><span id="myStory" class="phrase_history"></span></p> -->
+                <p><span id="phrase1"></span><span id="phrase2"></span><span id="origine"></span></p>
+                <p class="text"><span id="famille"></span></p>
+                <p><span id="phrase3"></span><span id="tragedie"></span></p>
+            </div>   
+        </div>
+
+        
+
+    </div> <!--fin de container -->
+
+
+    <script src="./scripts/cyberpunk.js"></script>
+    <script src="./scripts/navbar.js"></script>
+</body>
+</html>
