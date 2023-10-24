@@ -5,6 +5,7 @@ import { quietus, diablerie, chaotis, sethisme, p_ombre, aucun, auspex, ronin, p
 } from "/scripts/pouvoirsLignees.js";
 
 const valideBtnClan = document.getElementById("valide_clan");
+const BtnClanTest = document.getElementById("btnallclan");
 // délcarer la constante ici pour éviter la répétition du bouton.
 const btnPower = document.createElement("button");
 const btnHistory = document.createElement("button");
@@ -96,29 +97,16 @@ valideBtnClan.addEventListener("click", () => {
 
 //=====================================================================
 
-// test avec l'objet clanvampire
-// console.log("object clanvampire : ", Object.values(clanVampire)[0][1])
-
-//afficher toutes les valeurs de l'objet clanVampire
-
-function getAllClan(){
-    for (const [key, value] of Object.entries(clanVampire)) {
-        console.log(`${value[0]}`);
-        tabAllClan.push(`${value[0]}`);
-        
-      }
-};
-
-// getAllClan();
-//     console.log("tableau des lignées : " + tabAllClan);
-    // console.table(tabAllClan);
-
 // fonction pour afficher la liste des lignées dans le DOM.
 
-// function affAllClan(){
-//     document.getElementById("allClan").innerHTML = tabAllClan;
-// };
+function affAllClan(){
+    document.getElementById("allClan").innerHTML = "test coucou";
+};
 
-// affAllClan();
+
+//Bouton testclan
+BtnClanTest.addEventListener("click", () => {
+    affAllClan()
+});
 
 //===================================================================
