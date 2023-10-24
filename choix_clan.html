@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Choix de la lignée vampirique pour l'Age Noir">
+
+    <title>AN_choix_lignée</title>
+    <link rel="stylesheet" href="./styles/background.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./range.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Caliban-Grim</a>
+        <a href="index.html" class="navlink">Lancer de dés</a>
+        <a href="choix_clan.html" class="navlink">AN Choix lignée Vp</a>
+        <a href="background_AN.html" class="navlink">AN_background</a>
+        <a href="fiche_AN.html" class="navlink">AN Stats</a>
+        <a href="pouvoirs.html" class="navlink">AN Pouvoirs commun</a>
+        <a href="lignees.html" class="navlink">AN Pouvoirs lignées</a>
+        <a href="cyberpunk.html" class="navlink">Cyberpunk</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+    <div class="container">
+        <div class="introduction">
+            <h1>Les Chroniques de l'Age Noir</h1>
+            <h2>Choix de la lignée vampirique</h2>
+            <h3 class="titre2">Chaque vampire est issue d'un clan, d'une lignée avec son histoire et ses pouvoirs</h3>
+            
+        </div><!--fin d'introduction-->
+
+        <div class="form">
+            <h2 class="titre_form">Laisse les dieux choisir ta lignée !</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_clan">C'est ton destin !</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="clanVp" class="lignee_choisit"></span></h3>
+                <h3 class="spanform2"><span id="resumeClan"></span></h3>
+                <div id="btnForHistory"></div>
+                <h3 class="spanform2"><span id="pouvoirVp"></span></h3> 
+                <div id="btnForPower"></div>
+        
+            </div>   
+        </div>
+        <div class="form">
+            <h2 class="titre_form">test affichage de toutes les lignées</h2>
+            <div class="range-container">
+                <button type="button" class="btn_destin" id="valide_clan">C'est ton destin !</button> 
+            </div>
+        
+            <div class="karac_form">
+                <h3 class="spanform"><span id="allClan"></span></h3>
+        
+            </div>   
+        </div>
+
+
+    </div> <!--fin de container -->
+
+    <script src="./scripts/navbar.js"></script>
+    <script type="module" src="./scripts/lignee.js"></script>
+</body>
+</html>

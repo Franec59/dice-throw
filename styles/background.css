@@ -112,6 +112,28 @@ h3{
     color:rgb(235, 139, 75);
 }
 
+.lignee_choisit{
+    color:rgb(235, 139, 75);
+    font-size: 1.5rem;
+}
+
 .spanform{
     text-align: center;
+}
+
+.btnDetail{
+    background: linear-gradient( rgb(63, 56, 43) 0%, rgb(235, 202, 141) 100%);
+    padding: 5px 5px;
+    /* border-radius: 20px; */
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+    color: rgb(34, 23, 2);
+    font-weight: bold;
+    transition: 0.5s;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+.btnDetail:hover{
+    transform:scale(1.1)
 }

@@ -45,7 +45,7 @@ const ethnie = {
 // fonction qui affiche l'ethnie du personnage dans le DOM aléatoirement
 function afficherEthnie(){
     const randomIndexEthnie = Math.floor(Math.random() * 21);
-    console.log("chiffre random : ", randomIndexEthnie)
+    // console.log("chiffre random : ", randomIndexEthnie)
     const indexEthnieSelected = Object.values(ethnie)[randomIndexEthnie];
     console.log(indexEthnieSelected);
 
