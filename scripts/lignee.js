@@ -1,8 +1,4 @@
-// import du détails des pouvoirs depuis pouvoirsLignees.js
-import { quietus, diablerie, chaotis, sethisme, p_ombre, aucun, auspex, ronin, pantomime, 
-    sanctis, cimeris, abysse, pervertis, mystification, bubanis, epervier, devoris, tortured,
-    globulis, lumens
-} from "/scripts/pouvoirsLignees.js";
+// variables & cie =================================
 
 const valideBtnClan = document.getElementById("valide_clan");
 const BtnClanTest = document.getElementById("btnallclan");
@@ -11,8 +7,41 @@ const btnPower = document.createElement("button");
 const btnHistory = document.createElement("button");
 const tabAllClan =[];
 
+//=================================================================
+// Pouvoirs des lignées ==============================================
+
+class PouvoirsLignees {
+    constructor(powerName){ 
+        this.powerName = powerName
+    }
+};
+
+const quietus = new PouvoirsLignees ( "Quiétus");
+const diablerie = new PouvoirsLignees ( "Diablerie");
+const chaotis = new PouvoirsLignees ("Chaotis");
+const sethisme = new PouvoirsLignees ("Sethisme");
+const p_ombre = new PouvoirsLignees ("Pouvoir de l'ombre");
+const aucun = new PouvoirsLignees ("Aucun pouvoir de lignée en raison de sa malédiction");
+const auspex = new PouvoirsLignees ("Auspex");
+const ronin = new PouvoirsLignees ("La voie du Ronin");
+const pantomime = new PouvoirsLignees ("Pantomime");
+const sanctis = new PouvoirsLignees ("Sanctis");
+const cimeris = new PouvoirsLignees ("Cimeris");
+const abysse = new PouvoirsLignees ("Le Baiser de l'abysse");
+const pervertis = new PouvoirsLignees ("Pervertis");
+const mystification = new PouvoirsLignees ("Mystifications");
+const bubanis = new PouvoirsLignees ("Bubanis");
+const epervier = new PouvoirsLignees ("Les Faveurs de l'épervier");
+const devoris = new PouvoirsLignees ("Amès Dévoris");
+const tortured = new PouvoirsLignees ("Tortured Souls");
+const globulis = new PouvoirsLignees ("Sanguiné Globulis");
+const lumens = new PouvoirsLignees ("Néphégus Lumens");
+
+    // vérification ==
+    // console.log("pouvoir quietus : ", quietus.powerName)
+
 //=====================================================================
-// test avec un construceur
+// Lignée vampirique ================================================
 
 class Lignee {
     constructor(clan, resume, pouvoir){
@@ -58,6 +87,8 @@ tabLignee.push(assamite, necromancien, chaos, sethiste, enfantNuit, nosferatus, 
         // console.log("1 élément :", tabLignee[1]);
         // console.log("tous les clans :", tabLignee.clan);
 
+//=============================================================
+
 // fonction qui affiche la lignée vampirique dans le DOM aléatoirement ==============
 function afficherClan(){
     const randomIndexClan = Math.floor(Math.random() * 20);
@@ -87,7 +118,7 @@ function afficheBtnHistory() {
 };
 
 
-//Bouton clan
+//Bouton pour le choix aléatoire de la lignée ==========================
 valideBtnClan.addEventListener("click", () => {
     
     afficherClan();
@@ -97,7 +128,7 @@ valideBtnClan.addEventListener("click", () => {
 
 //=====================================================================
 
-// fonction pour afficher la liste des lignées dans le DOM.
+// Affichage de toutes les lignées + select manuel via radio btn ======
 
 function affAllClan(){
     document.getElementById("allClan").innerHTML = "test coucou";
