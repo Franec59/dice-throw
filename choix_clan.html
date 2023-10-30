@@ -53,13 +53,19 @@
         </div>
         <div class="form">
             <h2 class="titre_form">test affichage de toutes les lignées</h2>
-            <div class="range-container">
-                <button type="button" class="btn_destin" id="btnallclan">test</button> 
-            </div>
-        
+            
+            <form action ="" class="formRadio">
+                <input type="radio" id="assamiteRadio" name="choix" value="assamite"/>
+                <label for="choix" class="radio">Assamite</label>
+                <input type="radio" id="necromancienRadio" name="choix" value="necromancien" />
+                <label for="choix" class="radio">Necromancien</label>
+            </form>
+
             <div class="karac_form">
-                <h3 class="spanform"><span id="allClan"></span></h3>
-        
+                <h3 class="spanform"><span id="affRadio"></span></h3>
+                <h3 class="spanform"><span id="clanVp2" class="lignee_choisit"></span></h3>
+                <h3 class="spanform2"><span id="resumeClan2"></span></h3>
+                <h3 class="spanform2"><span id="pouvoirVp2"></span></h3> 
             </div>   
         </div>
 
@@ -67,7 +73,7 @@
     </div> <!--fin de container -->
 
     <script src="./scripts/navbar.js"></script>
-    <script src="./scripts/lignee.js"></script>
+    <script type="module" src="./scripts/lignee.js"></script>
     
 </body>
 </html>

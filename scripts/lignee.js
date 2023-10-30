@@ -1,11 +1,11 @@
 // variables & cie =================================
 
 const valideBtnClan = document.getElementById("valide_clan");
-const BtnClanTest = document.getElementById("btnallclan");
 // délcarer la constante ici pour éviter la répétition du bouton.
 const btnPower = document.createElement("button");
 const btnHistory = document.createElement("button");
 const tabAllClan =[];
+
 
 //=================================================================
 // Pouvoirs des lignées ==============================================
@@ -126,18 +126,55 @@ valideBtnClan.addEventListener("click", () => {
     afficheBtnPower();
 });
 
-//=====================================================================
-
-// Affichage de toutes les lignées + select manuel via radio btn ======
-
-function affAllClan(){
-    document.getElementById("allClan").innerHTML = "test coucou";
-};
+// Ajouter la description des lignées =========================================================
+import { assamiteHy, necromancienHy } from './ligneeDescription.js'
 
 
-//Bouton testclan
-BtnClanTest.addEventListener("click", () => {
-    affAllClan()
+// Affichage de toutes les lignées + select manuel via radio btn =============================
+
+const getRadios = document.querySelectorAll('input'); //getRadios = tab car querySetectorAll
+const getRadioSelected = document.querySelector('form');
+
+//récuperer le choix du bouton radio ==========================
+
+
+getRadioSelected.addEventListener("change", () => {
+    for (var i=0; i<getRadios.length; i++ ){
+        if ( getRadios[i].checked ) break;
+    }
+    console.log(getRadios[i].value);
+    let radioSelected = getRadios[i].value;
+    console.log(radioSelected);
+
+    if (radioSelected == "assamite"){
+        document.getElementById("affRadio").innerHTML = assamiteHy.description;
+        document.getElementById("pouvoirVp2").innerHTML = "Pouvoir de lignée : " + assamite.pouvoir;
+        
+    } else if ( radioSelected == "necromancien" ){
+        document.getElementById("affRadio").innerHTML = necromancienHy.description;
+        document.getElementById("pouvoirVp2").innerHTML = "Pouvoir de lignée : " + necromancien.pouvoir;
+        
+    }
+    //afficher la description en fonction du radio checked ================
+    // document.getElementById("affRadio").innerHTML = radioSelected.toString();
 });
 
-//===================================================================
+
+
+
+
+
+
+
+
+//test import =======================
+import {test} from './pouvoirsLignees.js'
+
+// test();
+
+// asynchrone ==============
+
+// import ('./pouvoirsLignees.js')
+//     .then((module) => {
+//         module.xxxxx(); 
+//     });

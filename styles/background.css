@@ -137,3 +137,11 @@ h3{
 .btnDetail:hover{
     transform:scale(1.1)
 }
+
+.radio{
+    color:white;
+}
+
+.formRadio{
+    margin-bottom: 2rem;
+}
