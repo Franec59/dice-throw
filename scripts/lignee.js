@@ -1,3 +1,6 @@
+// Ajouter la description des lignées =========================================================
+import { assamiteHy, necromancienHy, chaosHy, sethisteHy, enfantNuitHy } from './ligneeDescription.js'
+
 // variables & cie =================================
 
 const valideBtnClan = document.getElementById("valide_clan");
@@ -5,7 +8,7 @@ const valideBtnClan = document.getElementById("valide_clan");
 const btnPower = document.createElement("button");
 const btnHistory = document.createElement("button");
 const tabAllClan =[];
-
+let clanSelected ="";
 
 //=================================================================
 // Pouvoirs des lignées ==============================================
@@ -101,6 +104,8 @@ function afficherClan(){
     document.getElementById("resumeClan").innerHTML = indexClanSelected.resume;
     document.getElementById("pouvoirVp").innerHTML = "Pouvoir de lignée : " + indexClanSelected.pouvoir;
     
+    clanSelected = indexClanSelected.clan
+    console.log("clan selected = :", clanSelected)
 };
 
 //fonction pour afficher un bouton pour avoir le détail du pouvoir =================
@@ -111,11 +116,36 @@ function afficheBtnPower() {
     document.getElementById("btnForPower").appendChild(btnPower);
 };
 
+//fonction afin d'afficher la description via le btn btnForHistory ======================
+
+function affDescriptionClan(){
+    if ( clanSelected == "Assamites"){
+        document.getElementById("histoireduclan").innerHTML = assamiteHy.description;
+    } else if ( clanSelected == "Nécromanciens"){
+        document.getElementById("histoireduclan").innerHTML = necromancienHy.description;
+    } else if ( clanSelected == "Seigneurs du Chaos"){
+        document.getElementById("histoireduclan").innerHTML = chaosHy.description;
+    } else if ( clanSelected == "Sethiste"){
+        document.getElementById("histoireduclan").innerHTML = sethisteHy.description;
+    } else if ( clanSelected == "Enfant de la Nuit") {
+        document.getElementById("histoireduclan").innerHTML = enfantNuitHy.description;
+    } else {
+        document.getElementById("histoireduclan").innerHTML = "Clan sans histoire !!!";
+    }
+};
+
 function afficheBtnHistory() {
     btnHistory.innerHTML = "Histoire du clan";
-    btnHistory.classList.add("btnDetail")
+    btnHistory.classList.add("btnDetail");
+    btnHistory.setAttribute("id","btnDescription");
     document.getElementById("btnForHistory").appendChild(btnHistory);
+
+    const valideBtnDescription = document.getElementById("btnDescription");
+    valideBtnDescription.addEventListener("click", () => {
+        affDescriptionClan()
+    });
 };
+
 
 
 //Bouton pour le choix aléatoire de la lignée ==========================
@@ -124,10 +154,19 @@ valideBtnClan.addEventListener("click", () => {
     afficherClan();
     afficheBtnHistory()
     afficheBtnPower();
+    document.getElementById("histoireduclan").innerHTML = "";
+
 });
 
-// Ajouter la description des lignées =========================================================
-import { assamiteHy, necromancienHy } from './ligneeDescription.js'
+
+
+
+
+
+
+
+//======================================================================================
+//======================================================================================
 
 
 // Affichage de toutes les lignées + select manuel via radio btn =============================
@@ -154,9 +193,17 @@ getRadioSelected.addEventListener("change", () => {
         document.getElementById("affRadio").innerHTML = necromancienHy.description;
         document.getElementById("pouvoirVp2").innerHTML = "Pouvoir de lignée : " + necromancien.pouvoir;
         
+    } else if ( radioSelected == "chaos" ){
+        document.getElementById("affRadio").innerHTML = chaosHy.description;
+        document.getElementById("pouvoirVp2").innerHTML = "Pouvoir de lignée : " + chaos.pouvoir;
+    } else if ( radioSelected == "sethiste" ){
+        document.getElementById("affRadio").innerHTML = sethisteHy.description;
+        document.getElementById("pouvoirVp2").innerHTML = "Pouvoir de lignée : " + sethiste.pouvoir;
+    } else if ( radioSelected == "enfantNuit" ){
+        document.getElementById("affRadio").innerHTML = enfantNuitHy.description;
+        document.getElementById("pouvoirVp2").innerHTML = "Pouvoir de lignée : " + enfantNuit.pouvoir;
     }
-    //afficher la description en fonction du radio checked ================
-    // document.getElementById("affRadio").innerHTML = radioSelected.toString();
+
 });
 
 
