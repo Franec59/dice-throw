@@ -1,5 +1,9 @@
-// Ajouter la description des lignées =========================================================
-import { assamiteHy, necromancienHy, chaosHy, sethisteHy, enfantNuitHy } from './ligneeDescription.js'
+// import des class ===
+import { assamiteHy, necromancienHy, chaosHy, sethisteHy, enfantNuitHy } from './ligneeDescription.js';
+
+import {quietus, diablerie, chaotis, sethisme, p_ombre, aucun, auspex, ronin, pantomime, 
+    sanctis, cimeris, abysse, pervertis, mystification, bubanis, epervier, devoris, 
+    tortured, globulis, lumens } from "./pouvoirsLignees.js";
 
 // variables & cie =================================
 
@@ -9,39 +13,6 @@ const btnPower = document.createElement("button");
 const btnHistory = document.createElement("button");
 const tabAllClan =[];
 let clanSelected ="";
-
-//=================================================================
-// Pouvoirs des lignées ==============================================
-
-class PouvoirsLignees {
-    constructor(powerName){ 
-        this.powerName = powerName
-    }
-};
-
-const quietus = new PouvoirsLignees ( "Quiétus");
-const diablerie = new PouvoirsLignees ( "Diablerie");
-const chaotis = new PouvoirsLignees ("Chaotis");
-const sethisme = new PouvoirsLignees ("Sethisme");
-const p_ombre = new PouvoirsLignees ("Pouvoir de l'ombre");
-const aucun = new PouvoirsLignees ("Aucun pouvoir de lignée en raison de sa malédiction");
-const auspex = new PouvoirsLignees ("Auspex");
-const ronin = new PouvoirsLignees ("La voie du Ronin");
-const pantomime = new PouvoirsLignees ("Pantomime");
-const sanctis = new PouvoirsLignees ("Sanctis");
-const cimeris = new PouvoirsLignees ("Cimeris");
-const abysse = new PouvoirsLignees ("Le Baiser de l'abysse");
-const pervertis = new PouvoirsLignees ("Pervertis");
-const mystification = new PouvoirsLignees ("Mystifications");
-const bubanis = new PouvoirsLignees ("Bubanis");
-const epervier = new PouvoirsLignees ("Les Faveurs de l'épervier");
-const devoris = new PouvoirsLignees ("Amès Dévoris");
-const tortured = new PouvoirsLignees ("Tortured Souls");
-const globulis = new PouvoirsLignees ("Sanguiné Globulis");
-const lumens = new PouvoirsLignees ("Néphégus Lumens");
-
-    // vérification ==
-    // console.log("pouvoir quietus : ", quietus.powerName)
 
 //=====================================================================
 // Lignée vampirique ================================================
@@ -75,8 +46,6 @@ const ceraste = new Lignee ("Cérastes", "Les dépeceurs d’âmes, les profanat
 const reaper = new Lignee ("Blood-reaper", "Les moissonneurs de sang, Œnologue pervers, dandy enivré, collecteur de sang...", globulis.powerName);
 const paladin = new Lignee ("Paladins de Néphégos", "Ordre fanatique, chevalier noir, guerrier vampire....", lumens.powerName);
 
-    //vérif objet ====================================  
-    // console.log( "assamite : ", assamite)
 
 // Rangement des lignées dans un tableau ==============
 const tabLignee = [];
@@ -106,8 +75,8 @@ function afficherClan(){
     
     clanSelected = indexClanSelected.clan
     console.log("clan selected = :", clanSelected)
+    
 };
-
 //fonction pour afficher un bouton pour avoir le détail du pouvoir =================
 
 function afficheBtnPower() {
@@ -132,6 +101,7 @@ function affDescriptionClan(){
     } else {
         document.getElementById("histoireduclan").innerHTML = "Clan sans histoire !!!";
     }
+
 };
 
 function afficheBtnHistory() {
@@ -146,8 +116,6 @@ function afficheBtnHistory() {
     });
 };
 
-
-
 //Bouton pour le choix aléatoire de la lignée ==========================
 valideBtnClan.addEventListener("click", () => {
     
@@ -158,16 +126,8 @@ valideBtnClan.addEventListener("click", () => {
 
 });
 
-
-
-
-
-
-
-
 //======================================================================================
 //======================================================================================
-
 
 // Affichage de toutes les lignées + select manuel via radio btn =============================
 
@@ -175,7 +135,6 @@ const getRadios = document.querySelectorAll('input'); //getRadios = tab car quer
 const getRadioSelected = document.querySelector('form');
 
 //récuperer le choix du bouton radio ==========================
-
 
 getRadioSelected.addEventListener("change", () => {
     for (var i=0; i<getRadios.length; i++ ){
@@ -205,23 +164,3 @@ getRadioSelected.addEventListener("change", () => {
     }
 
 });
-
-
-
-
-
-
-
-
-
-//test import =======================
-import {test} from './pouvoirsLignees.js'
-
-// test();
-
-// asynchrone ==============
-
-// import ('./pouvoirsLignees.js')
-//     .then((module) => {
-//         module.xxxxx(); 
-//     });

@@ -146,11 +146,11 @@ h3{
     margin-bottom: 2rem;
 }
 
-#histoireduclan{
+.textclan{
     color:white;
     text-align: left;
 };
 
-#affRadio{
-    color:white;
+.pouvoirLignee {
+    color:rgb(202, 5, 5);
 }
