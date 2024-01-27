@@ -33,25 +33,6 @@ h2{
     text-align: center;
 }
 
-/* .introduction p {
-    margin-top: 1.5rem;
-    margin-left: 4.5rem;
-    margin-right: 4.5rem;
-    color: whitesmoke;
-    font-size: 1.2rem;  
-} */
-
-/* .titre2{
-    text-shadow: 2px 2px 2px black;
-    font-style: italic;
-    color:chartreuse;
-} */
-
-/* h3{
-    color:rgb(246, 237, 237);
-    text-shadow: 4px 4px 6px black;
-} */
-
 p{
     color:rgb(246, 237, 237);
     text-shadow: 4px 4px 6px black;
@@ -111,19 +92,132 @@ p{
     
 }
 
-/* .spanform2{
-    margin-top: -5px;
-    text-align: center;
-} */
-
-/* .phrase_history{
-    color:rgb(234, 228, 224);
-} */
-
-/* .spanform{
-    text-align: center;
-} */
-
 .text {
     margin-top: -0.8rem;
+}
+
+/*le cube*/
+/*==================================*/
+
+/*espace d'évolution d'un cube */
+.cube-container{
+    width: 3rem;
+    height: 3rem;
+    perspective: 1000px;
+    margin: 0.5rem;
+}
+
+.cube{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation : spin 2s 1 ease-out;
+    
+}
+
+.face{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-size: 1.8rem;
+}
+
+.top{
+    background-color: wheat;
+    transform: rotateX(90deg) translateZ(1.5rem);
+    
+}
+.bottom{
+    background-color: wheat;
+    transform: rotateX(-90deg) translateZ(1.5rem);
+}
+.right{
+    background-color: wheat;
+    transform: rotateY(90deg) translateZ(1.5rem);
+}
+.left{
+    background-color: wheat;
+    transform: rotateY(-90deg) translateZ(1.5rem);
+}
+
+.front1{
+    background-color: wheat;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+
+.front2{
+    background-color: wheat;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+
+.front3{
+    background-color: wheat;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+
+.front4{
+    background-color:wheat;
+    transform: rotateX(0deg) translateZ(1.5rem);
+}
+.back{
+    background-color: wheat;
+    transform: rotateX(-180deg) translateZ(1.5rem);
+}
+
+@keyframes spin {
+    from {transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/*========================================================*/
+
+#zonedelancer{
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+.repartition{
+    font-style: italic;
+    text-shadow: 2px 2px 2px black;
+    color:wheat;
+}
+
+.cyber_carac{
+    display: flex;
+    flex-wrap: wrap;
+    color:white;
+}
+.cyberform{
+    margin-left: 1.2rem;
+}
+
+/*Partie responsive =======================================*/
+@media screen and (max-width: 600px) {
+
+    .zonedelancer{
+        width: 80%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .cyber_carac{
+        flex-direction: column;
+    }
+    .cyberform{
+        margin-top: -0.8rem;
+    }
 }

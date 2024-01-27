@@ -32,11 +32,20 @@ export {quietus, diablerie, chaotis, sethisme, p_ombre, aucun, auspex, ronin, pa
     sanctis, cimeris, abysse, pervertis, mystification, bubanis, epervier, devoris, 
     tortured, globulis, lumens };
 
+// détails de chaque pouvoir ========================================================
 
+class DisciplineOfQuietus {
+    constructor(discipline, powerNiveau){
+        this.discipline = discipline;
+        this.powerNiveau = powerNiveau;
+    }
+};
 
-// const quietus = {
-//     quietus0 : "Quiétus",
-//     quietus1 : ["Martyr Sanguin", "L'assamite peut empoissonner de la nourriture, un puit, un pichet d’eau, grâce à une simple goutte ou plus de son sang auquel il va conférer une mortalité foudroyante. Il lui suffit alors de s’entailler pour faire couler son venin."],
-//     quietus2 : ["Arme de sang", "L’assamite peut maculer de sang une arme de son sang empoisonné afin d’en accroitre les dégâts. Chaque blessure ouverte contaminera son adversaire selon le même principe que le martyr sanguin."]
+const martyrSanguin = new DisciplineOfQuietus ("L'assamite peut empoissonner de la nourriture, un puit, un pichet d'eau, grâce à une simple goutte ou plus de son sang auquel il va conférer une mortalité foudroyante. Il lui suffit alors de s'entailler pour faire couler son venin.", "[4]");
+// console.log("discipline2 : ", martyrSanguin.discipline )
+// console.log("discipline3 : ", martyrSanguin.powerNiveau)
 
-// };
+const armeDeSang = new DisciplineOfQuietus ("L’assamite peut maculer de sang une arme de son sang empoisonné afin d’en accroitre les dégâts. Chaque blessure ouverte contaminera son adversaire selon le même principe que le martyr sanguin.", "[5]");
+
+// export ===============================================
+export { martyrSanguin, armeDeSang };

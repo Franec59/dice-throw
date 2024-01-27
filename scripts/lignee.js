@@ -5,6 +5,8 @@ import {quietus, diablerie, chaotis, sethisme, p_ombre, aucun, auspex, ronin, pa
     sanctis, cimeris, abysse, pervertis, mystification, bubanis, epervier, devoris, 
     tortured, globulis, lumens } from "./pouvoirsLignees.js";
 
+import { martyrSanguin, armeDeSang } from "./pouvoirsLignees.js";
+
 // variables & cie =================================
 
 const valideBtnClan = document.getElementById("valide_clan");
@@ -77,13 +79,6 @@ function afficherClan(){
     console.log("clan selected = :", clanSelected)
     
 };
-//fonction pour afficher un bouton pour avoir le détail du pouvoir =================
-
-function afficheBtnPower() {
-    btnPower.innerHTML = "Détails du pouvoir";
-    btnPower.classList.add("btnDetail")
-    document.getElementById("btnForPower").appendChild(btnPower);
-};
 
 //fonction afin d'afficher la description via le btn btnForHistory ======================
 
@@ -115,6 +110,24 @@ function afficheBtnHistory() {
         affDescriptionClan()
     });
 };
+
+//fonction pour afficher un bouton pour avoir le détail du pouvoir =================
+
+function affPouvoirLignee(){
+    if ( clanSelected == "Assamites"){
+        document.getElementById("pouvoirdelignee").innerHTML = assamiteHy.description;
+    } else {
+        document.getElementById("pouvoirdelignee").innerHTML = "Clan sans pouvoir !!!";
+    }
+};
+
+
+function afficheBtnPower() {
+    btnPower.innerHTML = "Détails du pouvoir";
+    btnPower.classList.add("btnDetail")
+    document.getElementById("btnForPower").appendChild(btnPower);
+};
+
 
 //Bouton pour le choix aléatoire de la lignée ==========================
 valideBtnClan.addEventListener("click", () => {
