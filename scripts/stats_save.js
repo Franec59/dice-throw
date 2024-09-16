@@ -1,20 +1,10 @@
 // Page js de la page stats - points de personnage
 //=====================================================
 
-//définir les variables =============
+//Partie lancer de dés pour les caractéristiques =============
 
+const jetMax = 18
 const zoneDeLancer = document.getElementById("zonedelancer");
-let cyberAgi = 1;
-let cyberFor = 1;
-let cyberEnd = 1;
-let cyberPer = 1;
-let cyberRef = 1;
-let cyberInt = 1;
-let cyberAdr = 1;
-let cyberTech =1;
-let cyberVol = 1;
-let cyberEmp = 1;
-let cyberBt = 1;
 
 // selection des boutons ====================================
 const CyberBtnD = document.getElementById("jetdeD");
@@ -24,19 +14,10 @@ const valideCarac = document.getElementById("valide_carac");
 var cyberCarac = [];
 var cyberCaracSelected = [];
 
-//masquer les boutons et les div de la partie 2  ================================
+//masquer le bouton et la div répartition des caractéristiques ========
 document.getElementById("aff_bouton").style.display = "none";
 document.getElementById("div_repartition").style.display = "none";
 document.getElementById("div_base").style.display = "none";
-document.getElementById("div_aptitudes").style.display = "none";
-
-// fonction pour générer un nombre aléatoire compris entre un nbre min et un nbre max
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 // fonction pour lancer les dés =======================================
 function cyberD () {
@@ -80,39 +61,36 @@ function cyberD () {
 
     const resultTop = document.querySelectorAll(".top");
     resultTop.forEach((destop) => {
-        // destop.textContent = Math.floor(Math.random() * (jetMax) +1)
-        destop.textContent = getRandomInt(9, 18);
-
+        destop.textContent = Math.floor(Math.random() * (jetMax) +1)
     });
     const resultBack = document.querySelectorAll(".back");
     resultBack.forEach((desback) => {
-        desback.textContent = getRandomInt(9, 18)
+        desback.textContent = Math.floor(Math.random() * (jetMax) +1)
     });
     const resultBottom = document.querySelectorAll(".bottom");
     resultBottom.forEach((desbottom) => {
-        desbottom.textContent = getRandomInt(9, 18)
+        desbottom.textContent = Math.floor(Math.random() * (jetMax) +1)
     });
     const resultRight = document.querySelectorAll(".right");
     resultRight.forEach((desright) => {
-        desright.textContent = getRandomInt(9, 18)
+        desright.textContent = Math.floor(Math.random() * (jetMax) +1)
     });
     const resultLeft = document.querySelectorAll(".left");
     resultLeft.forEach((desleft) => {
-        desleft.textContent = getRandomInt(9, 18)
+        desleft.textContent = Math.floor(Math.random() * (jetMax) +1)
     });
 
 };
 
-// afficher le score des caractéristiques sur la face visible (carac de 9 à 18)
+// afficher le score des caractéristiques sur la face visible (carac de 8 à 18 =>1D10+8)
 
 function jetEnCarac () {
     const resultFront1 = document.querySelectorAll(".front1");
     resultFront1.forEach((desfront) => {
-        // desfront.textContent = Math.floor((Math.random() * 10 +1)+8);
-        desfront.textContent = getRandomInt(9, 18);
+        desfront.textContent = Math.floor((Math.random() * 10 +1)+8);
         cyberCarac.push(desfront.textContent);
     });
-};
+}
 
 //fonction pour ajouter le son au jet de dés =================
 const diceSound = () => {
@@ -127,17 +105,15 @@ CyberBtnD.addEventListener("click", () => {
     zoneDeLancer.innerHTML = "";
     cyberCarac.length = 0;
     zoneDeLancer.classList.add("tapis");
-    //Pour lancer 11 dés ======
+    //11 karac entre 8 et 18 
     for (let a = 0; a < 11; a++ ){
         cyberD()
     };
     jetEnCarac()
-    // diceSound();
+    diceSound();
     //afficher le bouton pour la répartition des valeurs ========
     document.getElementById("aff_bouton").style.display = "flex";
-    // Vérif ====================
-    console.log("Tab des carac générées = ", cyberCarac)
-
+    console.log("karac du lancer de D =", cyberCarac)
 });
 
 
@@ -150,17 +126,17 @@ function shuffleTabCyber(inputTab){
 
 // fonction qui attribue les valeurs du tableau dans les karacs
 function repartition(){
-    cyberAgi = cyberCaracSelected[0];
-    cyberFor = cyberCaracSelected[1];
-    cyberEnd = cyberCaracSelected[2];
-    cyberPer = cyberCaracSelected[3];
-    cyberRef = cyberCaracSelected[4];
-    cyberInt = cyberCaracSelected[5];
-    cyberAdr = cyberCaracSelected[6];
-    cyberTech = cyberCaracSelected[7];
-    cyberVol = cyberCaracSelected[8];
-    cyberEmp = cyberCaracSelected[9];
-    cyberBt = cyberCaracSelected[10];
+    const cyberAgi = cyberCaracSelected[0];
+    const cyberFor = cyberCaracSelected[1];
+    const cyberEnd = cyberCaracSelected[2];
+    const cyberPer = cyberCaracSelected[3];
+    const cyberRef = cyberCaracSelected[4];
+    const cyberInt = cyberCaracSelected[5];
+    const cyberAdr = cyberCaracSelected[6];
+    const cyberTech = cyberCaracSelected[7];
+    const cyberVol = cyberCaracSelected[8];
+    const cyberEmp = cyberCaracSelected[9];
+    const cyberBt = cyberCaracSelected[10];
     console.log("carac AGI = ", cyberAgi)
     document.getElementById("cyber_agi").innerHTML = cyberAgi;
     document.getElementById("cyber_for").innerHTML = cyberFor;
@@ -175,60 +151,18 @@ function repartition(){
     document.getElementById("cyber_bt").innerHTML = cyberBt;
 };
 
-// calcul des bases en caractéristiques ===================
-
-function baseKarac (){
-    const baseAgi = Math.ceil(cyberAgi/2+4);
-    console.log( "base en agi = ", baseAgi)
-    document.getElementById("Base_agi").innerHTML = baseAgi;
-    const basePer = Math.ceil(cyberPer/2+4);
-    document.getElementById("Base_per").innerHTML = basePer;
-    const baseInt = Math.ceil(cyberInt/2+2);
-    document.getElementById("Base_int").innerHTML = baseInt;
-    const baseAdr = Math.ceil(cyberAdr/2+4);
-    document.getElementById("Base_adr").innerHTML = baseAdr;
-    const baseTech = Math.ceil(cyberTech/2+2);
-    document.getElementById("Base_tech").innerHTML = baseTech;
-    const baseVol = Math.ceil(cyberVol/2+3);
-    document.getElementById("Base_vol").innerHTML = baseVol;
-    const baseEmp = Math.ceil(cyberEmp/2+3);
-    document.getElementById("Base_emp").innerHTML = baseEmp;
-
-};
-
-// calcul du modificateur de constitution ===================
-
-function modifCon(){
-    const constitution = Math.ceil((Number(cyberFor)+Number(cyberEnd))/2);
-    console.log("CON = ", constitution);
-    
-    if (Number(constitution)>=7 && Number(constitution)<=10){
-        document.getElementById("mc").innerHTML = 1;
-    } else if (Number(constitution)>=11 && Number(constitution)<=14){
-        document.getElementById("mc").innerHTML = 2;
-    } else if (Number(constitution)>=15 && Number(constitution)<=18){
-        document.getElementById("mc").innerHTML = 3;
-    } else {
-        document.getElementById("mc").innerHTML = "par les dieux du chaos !!!";
-    }
-};
-
-
-// bouton de répartition auto des scores générés =======================
+// bouton de répartition auto du jet de dés => select value in new array
 
 valideCarac.addEventListener("click", () => { 
     //afficher la div pour la répartition des caractéristiques ========
     document.getElementById("div_repartition").style.display = "flex";
     document.getElementById("div_base").style.display = "flex";
-    document.getElementById("div_aptitudes").style.display = "flex";
     cyberCaracSelected = [].concat(cyberCarac);
-    // console.log("tab idem carac : ",cyberCaracSelected );
+    console.log("tab idem carac : ",cyberCaracSelected );
     shuffleTabCyber(cyberCaracSelected);
-    // console.log("mélange carac :", cyberCaracSelected)
+    console.log("mélange carac :", cyberCaracSelected)
     repartition()
-    baseKarac()
-    modifCon()
     
-});
+})
 
 

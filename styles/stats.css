@@ -196,10 +196,14 @@ p{
 .cyber_carac{
     display: flex;
     flex-wrap: wrap;
-    color:white;
+    color:sandybrown;
 }
 .cyberform{
     margin-left: 1.2rem;
+}
+
+.color_carac{
+    color:white;
 }
 
 /*Partie responsive =======================================*/
