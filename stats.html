@@ -17,7 +17,7 @@
     <div class="topnav" id="myTopnav">
         <a href="index.html" class="active">Caliban-Grim</a>
         <a href="index.html" class="navlink">Lancer de dés</a>
-        <a href="stats.html" class="navlink">Points de perso</a>
+        <a href="stats.html" class="navlink">Stats du personnage</a>
         <a href="choix_clan.html" class="navlink">AN Choix lignée Vp</a>
         <a href="background_AN.html" class="navlink">AN_background</a>
         <a href="fiche_AN.html" class="navlink">AN_Stats</a>
@@ -34,7 +34,7 @@
             <h2>Création d'un personnage</h2>
         </div><!--fin d'introduction-->
 
-        <h2 class="titre_form">Caractéristiques</h2>
+        <h2 class="titre_form">Déterminer les caractéristiques</h2>
         <div class="range-container">
             <button id="jetdeD" class="btn_destin">Lancer les Dés</button> 
         </div>
@@ -49,17 +49,17 @@
             <h3 class="repartition">Répartition aléatoire des caractéristiques</h3>
             
             <div class="cyber_carac">
-                <h3 class="cyberform">[AGI] : <span id="cyber_agi"></span></h3>
-                <h3 class="cyberform">[FOR] : <span id="cyber_for"></span></h3>
-                <h3 class="cyberform">[END] : <span id="cyber_end"></span></h3>
-                <h3 class="cyberform">[PER] : <span id="cyber_per"></span></h3>
-                <h3 class="cyberform">[REF] : <span id="cyber_ref"></span></h3>
-                <h3 class="cyberform">[INT] : <span id="cyber_int"></span></h3>
-                <h3 class="cyberform">[ADR] : <span id="cyber_adr"></span></h3>
-                <h3 class="cyberform">[TECH] : <span id="cyber_tech"></span></h3>
-                <h3 class="cyberform">[VOL] : <span id="cyber_vol"></span></h3>
-                <h3 class="cyberform">[EMP] : <span id="cyber_emp"></span></h3>
-                <h3 class="cyberform">[BT] : <span id="cyber_bt"></span></h3>
+                <h3 class="cyberform">[AGI] : <span id="cyber_agi" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[FOR] : <span id="cyber_for" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[END] : <span id="cyber_end" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[PER] : <span id="cyber_per" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[REF] : <span id="cyber_ref" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[INT] : <span id="cyber_int" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[ADR] : <span id="cyber_adr" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[TECH] : <span id="cyber_tech" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[VOL] : <span id="cyber_vol" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[EMP] : <span id="cyber_emp" class="color_carac"></span></span></h3>
+                <h3 class="cyberform">[BT] : <span id="cyber_bt" class="color_carac"></span></span></h3>
             </div>
         </div> <!-- fin de répartition -->
 
@@ -83,6 +83,10 @@
             
             <div class="cyber_carac">
                 <h3 class="cyberform">[MC] = <span id="mc" class="color_carac"></span></h3>
+                <h3 class="cyberform">[Action/Tour] = <span class="color_carac">2</span></h3>
+                <h3 class="cyberform">[Mov/Tour] = <span class="color_carac">3</span></h3>
+                <h3 class="cyberform">[Bonus aux dégâts] = <span span id="bon_deg" class="color_carac">3</span></h3>
+                <h3 class="cyberform">[Niveau d'ENC] = <span span id="enc" class="color_carac"></span></h3>
                 
             </div>
 

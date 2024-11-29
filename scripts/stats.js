@@ -132,7 +132,7 @@ CyberBtnD.addEventListener("click", () => {
         cyberD()
     };
     jetEnCarac()
-    // diceSound();
+    diceSound();
     //afficher le bouton pour la répartition des valeurs ========
     document.getElementById("aff_bouton").style.display = "flex";
     // Vérif ====================
@@ -178,7 +178,7 @@ function repartition(){
 // calcul des bases en caractéristiques ===================
 
 function baseKarac (){
-    const baseAgi = Math.ceil(cyberAgi/2+4);
+    const baseAgi = Math.ceil(cyberAgi/2+3);
     console.log( "base en agi = ", baseAgi)
     document.getElementById("Base_agi").innerHTML = baseAgi;
     const basePer = Math.ceil(cyberPer/2+4);
@@ -189,7 +189,7 @@ function baseKarac (){
     document.getElementById("Base_adr").innerHTML = baseAdr;
     const baseTech = Math.ceil(cyberTech/2+2);
     document.getElementById("Base_tech").innerHTML = baseTech;
-    const baseVol = Math.ceil(cyberVol/2+3);
+    const baseVol = Math.ceil(cyberVol/2+4);
     document.getElementById("Base_vol").innerHTML = baseVol;
     const baseEmp = Math.ceil(cyberEmp/2+3);
     document.getElementById("Base_emp").innerHTML = baseEmp;
@@ -213,6 +213,35 @@ function modifCon(){
     }
 };
 
+// calcul du modificateur du bonus aux dégâts ===================
+
+function bonusDegats(){
+    if (Number(cyberFor)<=9){
+        document.getElementById("bon_deg").innerHTML = 0;
+    } else if (Number(cyberFor)>=10 && Number(cyberFor)<=12){
+        document.getElementById("bon_deg").innerHTML = "x1,5";
+    } else if (Number(cyberFor)>=13 && Number(cyberFor)<=15){
+        document.getElementById("bon_deg").innerHTML = "x2";
+    } else if (Number(cyberFor)>=16 && Number(cyberFor)<=20){
+        document.getElementById("bon_deg").innerHTML = "x3";
+    } else {
+        document.getElementById("bon_deg").innerHTML = "par les dieux du chaos !!!";
+    }
+};
+
+// calcul niveau d'encombrement [ENC] ===================
+
+function encombrement(){
+    if (Number(cyberFor)>=5 && Number(cyberFor)<=9){
+        document.getElementById("enc").innerHTML = "Malus de 1 pour 5 pts d'enc";
+    } else if (Number(cyberFor)>=10 && Number(cyberFor)<=14){
+        document.getElementById("enc").innerHTML = "Malus de 1 pour 7 pts d'enc";
+    } else if (Number(cyberFor)>=15 && Number(cyberFor)<=18){
+        document.getElementById("enc").innerHTML = "Malus de 1 pour 9 pts d'enc";
+    } else {
+        document.getElementById("enc").innerHTML = "par les dieux du chaos !!!";
+    }
+};
 
 // bouton de répartition auto des scores générés =======================
 
@@ -228,6 +257,8 @@ valideCarac.addEventListener("click", () => {
     repartition()
     baseKarac()
     modifCon()
+    bonusDegats()
+    encombrement()
     
 });
 
